@@ -1,50 +1,38 @@
 const express = require("express");
-const dotenv = require("dotenv");
-const logger = require("pino")();
-const mongoose = require("mongoose");
-const cors = require("cors");
-const expressSession = require("express-session");
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const cors = require('cors');
 
-const app = express();
-dotenv.config();
-app.use(
-    cors({
-        origin: "http//localhost:3000",
-        credentials:true,
-    })
-);
-app.use(express.json());
-app.set("trust proxy",1);
-const sessSettings = expressSession({
-    path: "/",
-    secret: "oursecret",
-    resave: true,
-    saveUninitialized: true,
-    cookie: {
-        sameSite: false,
-        secure:false,
-        maxAge:360000,
-    },
+
+const app = express ();
+
+//import routes
+const orderRoutes = require('./routes/order');
+
+//app middleware
+app.use(bodyParser.json());
+app.use(cors());
+
+//route middleware
+app.use("/order",orderRoutes);
+
+
+const PORT = 8009;
+
+const DB_URL = 'mongodb+srv://GoMart:GoMart1234@gomart.pcvnduz.mongodb.net/GoMart?retryWrites=true&w=majority';
+
+app.listen(PORT, ()=>{
+    console.log(`App is running on ${PORT}`);
 });
 
-//app settings
-app.use(sessSettings);
-const PORT = process.env.PORT || 8000;
 
-//mongoose
-mongoose.connect(process.env.DB_URL, {
+mongoose.connect(DB_URL,{
     useNewUrlParser: true,
-});
+    useUnifiedTopology: true
 
-const connection = mongoose.connection;
-connection.once("open", () => {
-    logger.info(" Mongodb connected successfully");
-});
+})
+.then(()=>{
+    console.log('DB Connected.');
+})
+.catch((err)=> console.log('DB Connection error',err));
 
-app.get("/", (req,res) => {
-    res.status(200).json({ messsage: "Server is running!" });
-});
-
-app.listen(PORT, () => {
-    logger.info(`Server is running on PORT: ${PORT}`);
-  });
