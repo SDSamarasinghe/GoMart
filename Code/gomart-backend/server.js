@@ -45,6 +45,8 @@ app.get("/", (req,res) => {
     res.status(200).json({ messsage: "Server is running!" });
 });
 
+app.use("/api/Products", require("./routes/productRoutes"));
+
 app.listen(PORT, () => {
     logger.info(`Server is running on PORT: ${PORT}`);
   });
