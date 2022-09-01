@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Ads.css";
 import swal from "sweetalert";
-import product from "./img/add.png";
+import product from "./img/add-product.png";
 
 const AdvertiserForm = () => {
   const [listOfAds, setListOfAdvertisement] = useState([]);
@@ -106,7 +106,7 @@ const AdvertiserForm = () => {
         ]);
       });
     swal({
-      title: "Advertisment Added Successfuly!",
+      title: "Product Added Successfuly!",
       icon: "success",
       confirmButtonText: "OK",
     }).then(function () {
@@ -272,7 +272,7 @@ const AdvertiserForm = () => {
     </div>
     <div style={{float:"right", marginTop:"-580px",marginRight:"-500px",border:"3px solid #FFFFFF"}}>
 
-    <img width="540" height="500" style={{backgroundImage: `url(${product})`}}/>
+    <img width="530" height="500" style={{backgroundImage: `url(${product})`}}/>
   
     </div>
     </div>
