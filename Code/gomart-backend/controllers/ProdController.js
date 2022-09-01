@@ -6,6 +6,7 @@ const addProd = (req, res) => {
     brand,
     category,
     image,
+    price,
     smallDes,
   } = req.body;
 
@@ -14,6 +15,7 @@ const addProd = (req, res) => {
     brand,
     category,
     image,
+    price,
     smallDes,
   });
 
@@ -60,6 +62,7 @@ const updateProd = async (req, res) => {
       brand,
       category,
       image,
+      price,
       smallDes,
       
     } = req.body;
@@ -68,6 +71,7 @@ const updateProd = async (req, res) => {
       brand,
       category,
       image,
+      price,
       smallDes,
     });
 
