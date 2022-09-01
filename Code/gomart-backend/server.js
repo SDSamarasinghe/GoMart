@@ -50,3 +50,4 @@ app.use("/api/Products", require("./routes/productRoutes"));
 app.listen(PORT, () => {
     logger.info(`Server is running on PORT: ${PORT}`);
   });
+  

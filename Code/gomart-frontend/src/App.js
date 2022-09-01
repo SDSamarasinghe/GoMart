@@ -6,6 +6,9 @@ import './App.css';
 import Footer from "./components/Footer";
 import Navigator from "./components/Navigator/Navigator";
 import ProductCatelog from "./components/Products/ProductsCatelog";
+import AdvertiserForm from "./components/Products/AdvertiserForm";
+import AdminRegistration from "./components/Products/AdminRegistration";
+import EditAd from "./components/Products/EditAd";
 
 function App() {
   return (
@@ -14,6 +17,9 @@ function App() {
         <Navigator/>
           <Routes>
             <Route path="/test" element={<ProductCatelog />} />
+            <Route path="/Product/adform" element={<AdvertiserForm />} />
+            <Route path="/Product/adminReg" element={<AdminRegistration />} />
+            <Route path="/Product/editAd" element={<EditAd />} />
           </Routes>
         <Footer/>
       </BrowserRouter>
