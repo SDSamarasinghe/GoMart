@@ -9,6 +9,7 @@ import ProductCatelog from "./components/Products/ProductsCatelog";
 import AdvertiserForm from "./components/Products/AdvertiserForm";
 import AdminRegistration from "./components/Products/AdminRegistration";
 import EditAd from "./components/Products/EditAd";
+import AdminViewAds from "./components/Products/AdminViewAds";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path="/Product/adform" element={<AdvertiserForm />} />
             <Route path="/Product/adminReg" element={<AdminRegistration />} />
             <Route path="/Product/editAd" element={<EditAd />} />
+            <Route path="/Product/admin" element={<AdminViewAds />} />
           </Routes>
         <Footer/>
       </BrowserRouter>
