@@ -96,7 +96,7 @@ router.delete('/delete/:id', (req,res)=>{
         }
         return res.status(200).json({
             message: "Delete Successful.",
-            deletedCrew
+            deletedorder
         });
     });
 });
