@@ -18,9 +18,6 @@ const PropertyCatalog = () => {
     console.log(ads);
   }, []);
   
-  
-
-
   return (
 <div style={{backgroundColor:"#f0fff4"}}>
 <br/>
@@ -55,16 +52,17 @@ const PropertyCatalog = () => {
         }).map((ad) => (
     <div className="card" style={{ width: "15rem", margin: "1rem", height:"20rem",marginLeft:"1px" }}>
     <div className="card-bodies">
-    <div className="product-image" style={{height:"10rem", marginTop:"10px"}}>
-        <img src={ad.image} alt="product"/>
+    <div className="product-image" style={{height:"10px", marginTop:"10px"}}>
+        <img src={ad.image} alt="product" style={{width:"170px",height:"170px"}}/>
       </div>
-      <p className="card-text">Rs. {ad.name} </p><p className="card-left"> Per Perch </p><br/>
+      <p className="card-text">Rs. {ad.name} </p><br/>
       <p className="card-title">{ad.brand}</p>
       <p className="card-type">{ad.category}</p>
-      <p className="card-area">{ad.smallDes} Perches</p>
+      <p className="card-area">{ad.price}</p>
       <div>
       <span className="secondary p-1 px-4 rounded text-white" style={{backgroundColor:"#5cb85c"}}>
-      
+      <Link className="card-link"to={`/Product/Ad/${ad._id}/${ad.name}/${ad.brand}/${ad.category}/${ad.price}/${encodeURIComponent(ad.image)}`}
+      style={{color:"white"}}>more..</Link>
       </span>
       </div>
     </div>

@@ -270,9 +270,9 @@ const AdvertiserForm = () => {
 </center>
       </div >
     </div>
-    <div style={{float:"right", marginTop:"-580px",marginRight:"-500px",border:"3px solid #FFFFFF"}}>
+    <div style={{float:"right", marginTop:"-580px",marginRight:"-550px",border:"3px solid #FFFFFF"}}>
 
-    <img width="530" height="500" style={{backgroundImage: `url(${product})`}}/>
+    <img width="430" height="400" style={{backgroundImage: `url(${product})`}}/>
   
     </div>
     </div>
