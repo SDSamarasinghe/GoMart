@@ -1,6 +1,7 @@
 import React from "react";
 import "./navigator.css";
 import { Link } from "react-router-dom";
+import cart from "./img/carts.png";
 
 const Navigator = () => {
   return (
@@ -143,6 +144,13 @@ const Navigator = () => {
                   <li>
                     <a href="contact.html">
                       <span>Contact</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="contact.html">
+                      <span>Cart
+                        <img src={cart} alt="" style={{width:"40px"}}/>
+                      </span>
                     </a>
                   </li>
                 </ul>

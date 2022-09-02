@@ -10,7 +10,7 @@ const AdvertiserForm = () => {
   const [name, setName] = useState("");
   const [brand, setBrand] = useState("");
   const [price, setPrice] = useState("");
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState("Select Category");
   const [smallDes, setSmallDesc] = useState("");
   const [image, setImg] = useState("");
   const [formErrors, setFormErrors] = useState({});
@@ -75,7 +75,7 @@ const AdvertiserForm = () => {
     setBrand('Samsung');
     setPrice("233,000");
     setCategory("Mobile");
-    setSmallDesc("1.5km from kurusa kanuwa junction (Nittambuwa-Airport road). 5 km away from Katunayake international airport & Minuwangoda town. Land is facing to a paddy field & a river");
+    setSmallDesc("description");
     setImg("https://th.bing.com/th/id/R.af33f17558bd971ed68403483f4a1c4a?rik=Y4WMeusyShvTrA&riu=http%3a%2f%2fwww.southsrilankaproperty.com%2fwp-content%2fuploads%2f2017%2f08%2fAttractive-Coconut-Plantation-Plot-for-a-Villa-2.jpg&ehk=ibkoQ0N5qejqrN734rJBrnhgMtlOWCLK0LnB8z552mU%3d&risl=&pid=ImgRaw&r=0");
     
   };
@@ -154,6 +154,8 @@ const AdvertiserForm = () => {
         </h4>
         </div>
   <div className="form-group" style={{ marginBottom: "15px" }}>
+
+  
    
     <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Name"
      required
@@ -200,14 +202,68 @@ const AdvertiserForm = () => {
 
   <div class="form-group">
    
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Category"
-      required
-      value={category}
-      style={{color: "rgba(0, 0, 0, 0.7)"}}
-      onChange={(e) => {
-      setCategory(e.target.value);
-    }}
-    />
+  <div className="row mb-3"> 
+            <div className="col-sm-10">
+              <div class="dropdown">
+                <a
+                  class="btn btn-secondary dropdown-toggle"
+                  role="button"
+                  id="dropdownMenuLink"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  style={{ backgroundColor: "#FFFFFF" }}
+                >
+                  {category}
+                </a>
+
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <li
+                    onClick={(e) => {
+                      setCategory(e.target.textContent);
+                    }}
+                    value="action"
+                  >
+                    Mobile
+                  </li>
+                  <li
+                    onClick={(e) => {
+                      setCategory(e.target.textContent);
+                    }}
+                  >
+                    Handfree
+                  </li>
+                  <li
+                    onClick={(e) => {
+                      setCategory(e.target.textContent);
+                    }}
+                  >
+                    Power bank
+                  </li>
+                  <li
+                    onClick={(e) => {
+                      setCategory(e.target.textContent);
+                    }}
+                  >
+                    Camera
+                  </li>
+                  <li
+                    onClick={(e) => {
+                      setCategory(e.target.textContent);
+                    }}
+                  >
+                    PC parts
+                  </li>
+                  <li
+                    onClick={(e) => {
+                      setCategory(e.target.textContent);
+                    }}
+                  >
+                    Other Accessories
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
 
 <br/>
     <p class="alert-txt" style={{color:"red"}}>{formErrors.category}</p>
@@ -270,9 +326,9 @@ const AdvertiserForm = () => {
 </center>
       </div >
     </div>
-    <div style={{float:"right", marginTop:"-580px",marginRight:"-500px",border:"3px solid #FFFFFF"}}>
+    <div style={{float:"right", marginTop:"-580px",marginRight:"-550px",border:"3px solid #FFFFFF"}}>
 
-    <img width="530" height="500" style={{backgroundImage: `url(${product})`}}/>
+    <img width="430" height="400" style={{backgroundImage: `url(${product})`}}/>
   
     </div>
     </div>
