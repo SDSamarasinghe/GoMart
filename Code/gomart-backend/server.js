@@ -5,11 +5,6 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const expressSession = require("express-session");
 
-//Import routes here
-const userRoutes = require("./routes/userManageRoutes");
-const productRoutes = require("./routes/productRoutes");
-
-
 const app = express();
 dotenv.config();
 app.use(
@@ -50,10 +45,7 @@ app.get("/", (req, res) => {
   res.status(200).json({ messsage: "Server is running!" });
 });
 
-//Implement the routes from here
-app.use("/api/Products", productRoutes);
-app.use("/api/users", userRoutes);
-
+app.use("/api/Products", require("./routes/productRoutes"));
 
 app.listen(PORT, () => {
   logger.info(`Server is running on PORT: ${PORT}`);
