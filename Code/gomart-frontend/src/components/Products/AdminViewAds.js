@@ -112,7 +112,7 @@ const printPdf = () => {
     }).then((willDelete) => {
       if (willDelete) {
         axios
-          .delete(`http://localhost:8000/api/Product/${id}`)
+          .delete(`http://localhost:8000/api/Products/${id}`)
           .then(() => {
             swal("Advertisment Deleted Successfully!", {
               icon: "success",
@@ -140,22 +140,34 @@ const printPdf = () => {
           to="/Product/adform"
           style={{ extDecoration: "none", color: "white"}}
         >
-          Create New Advertisment
+          Add New Product
         </Link>
         <br />
         <br/>
       </button>
       </div>
+
+      <div style={{width:"300px",height:"850px",float:"left", marginLeft:"-350px", backgroundColor:"#078282",marginTop:"-128px"}}>
+     <p style={{marginLeft:"-200px",marginBottom:"40px"}}>MART</p>
+     <Link to="Product/adform"><p style={{marginTop:"40px",color:"#ffffff"}}>Dashboard</p></Link>
+     <Link to="Product/adform"><p style={{marginTop:"40px",color:"#ffffff"}}>Analytics</p></Link>
+     <Link to="Product/adform"><p style={{marginTop:"40px",color:"#ffffff"}}>Product</p></Link>
+     <Link to="Product/adform"><p style={{marginTop:"40px",color:"#ffffff"}}>Orders</p></Link>
+     <Link to="Product/adform"><p style={{marginTop:"40px",color:"#ffffff"}}>Transaction</p></Link>
+     <Link to="Product/adform"><p style={{marginTop:"40px",color:"#ffffff"}}>Message</p></Link>
+     <Link to="Product/adform"><p style={{marginTop:"40px",color:"#ffffff"}}>Customers</p></Link>
+
+      </div>
       
-      <table className="table table-hover pdfdiv" style={{ marginTop: "40px", width:"1300px", marginLeft:"-200px"}}>
+      <table className="table table-hover pdfdiv" style={{ marginTop: "40px", width:"1000px", marginLeft:"130px"}}>
         <thead>
           
           <tr>
             <th scope="col">No.</th>
             <th scope="col">name</th>
-            <th scope="col">Type</th>
+            <th scope="col">Brand</th>
+            <th scope="col">Category</th>
             <th scope="col">Price(Rs.)</th>
-            <th scope="col">Size(Purches)</th>
             <th scope="col">Action</th>
             
           </tr>
@@ -176,18 +188,18 @@ const printPdf = () => {
                     }/${adr.phone}/${encodeURIComponent(adr.image)}`}
                     style={{ textDecoration: "none" }}
                   >
-                    {adr.type}
+                    {adr.brand}
                   </Link>
                 </td>
               
+                <td style={{fontFamily:"sans-serif"}}>{adr.category}</td>
                 <td style={{fontFamily:"sans-serif"}}>{adr.price}</td>
-                <td style={{fontFamily:"sans-serif"}}>{adr.smallDesc}</td>
                 <td style={{fontFamily:"sans-serif",width:"200px"}}>
                   <Link
                     className="btn btn-warning"
                     to={`/Product/editAd/${adr._id}/${adr.name}/${adr.category}/${adr.brand}/${adr.smallDesc}/${
                         adr.price
-                      }/${adr.phone}/${encodeURIComponent(adr.image)}`}
+                      }/${encodeURIComponent(adr.image)}`}
                   >
                     <i className="fas fa-edit"></i>&nbsp;Edit
                   </Link>
