@@ -45,11 +45,11 @@ app.get("/", (req, res) => {
   res.status(200).json({ messsage: "Server is running!" });
 });
 
-<<<<<<< HEAD
-=======
 app.use("/api/Products", require("./routes/productRoutes"));
+app.use("/api/Order", require("./routes/order"));
+app.use("/api/shipping", require("./routes/shipping"));
+app.use("/api/delivery", require("./routes/delivery"));
 
->>>>>>> 4d67faeb05b57a336cca2c1d190b670b03a2b122
 app.listen(PORT, () => {
   logger.info(`Server is running on PORT: ${PORT}`);
 });
