@@ -20,7 +20,10 @@ function App() {
             <Route path="/test" element={<ProductCatelog />} />
             <Route path="/Product/adform" element={<AdvertiserForm />} />
             <Route path="/Product/adminReg" element={<AdminRegistration />} />
-            <Route path="/Product/editAd" element={<EditAd />} />
+            <Route
+          path="/Product/edit/:id/:name/:brand/:category/:image/:price/:smallDesc"
+          element={<EditAd />}
+        />
             <Route path="/Product/admin" element={<AdminViewAds />} />
           </Routes>
         <Footer/>
