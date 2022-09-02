@@ -48,8 +48,6 @@ app.get("/", (req, res) => {
 <<<<<<< HEAD
 =======
 app.use("/api/Products", require("./routes/productRoutes"));
-app.use("/api/Feedbacks", require("./routes/feedbackRoutes"));
-app.use("/api/Complaints", require("./routes/ComplaintsRoutes"));
 
 >>>>>>> 4d67faeb05b57a336cca2c1d190b670b03a2b122
 app.listen(PORT, () => {
