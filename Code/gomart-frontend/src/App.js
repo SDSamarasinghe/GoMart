@@ -11,6 +11,11 @@ import AdminRegistration from "./components/Products/AdminRegistration";
 import EditAd from "./components/Products/EditAd";
 import AdminViewAds from "./components/Products/AdminViewAds";
 
+
+import Login from "./components/Users/Login";
+import Register from "./components/Users/Register";
+import Profile from "./components/Users/Profile";
+
 function App() {
   return (
     <div className="App">
@@ -25,6 +30,11 @@ function App() {
           element={<EditAd />}
         />
             <Route path="/Product/admin" element={<AdminViewAds />} />
+
+            {/* Users */}
+            <Route path="/login" element={<Login />} />
+            <Route path="/sign-up" element={<Register />} />
+            <Route path="/profile" element={<Profile />} />
           </Routes>
         <Footer/>
       </BrowserRouter>

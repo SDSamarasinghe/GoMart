@@ -127,13 +127,13 @@ const printPdf = () => {
   return (
     
     <div className="col-md-8 mt-4 mx-auto" style={{marginBottom:"20px"}}>
-      <div style={{marginLeft:"-200px"}}>
+      <div style={{marginRight:"300px"}}>
      
-      <h3> <span className="secondary p-1 px-4 rounded text-white" style={{backgroundColor:"#5cb85c"}}>{greet} Admin</span></h3>
+      <h3> <span className="secondary p-1 px-4 rounded text-white" style={{backgroundColor:"#5cb85c",marginRight:"300px"}}>{greet} Admin</span></h3>
       
           
           <br/>
-          <button className="btn btn-warning" onClick={printPdf} style={{marginRight:"40px"}}>Download Report</button>
+          <button className="btn btn-warning" onClick={printPdf} style={{marginRight:"80px"}}>Download Report</button>
           <button className="btn btn-success" style={{height:"40px"}}>
         {" "}
         <Link
@@ -147,15 +147,15 @@ const printPdf = () => {
       </button>
       </div>
 
-      <div style={{width:"300px",height:"850px",float:"left", marginLeft:"-350px", backgroundColor:"#078282",marginTop:"-128px"}}>
-     <p style={{marginLeft:"-200px",marginBottom:"40px"}}>MART</p>
-     <Link to="Product/adform"><p style={{marginTop:"40px",color:"#ffffff"}}>Dashboard</p></Link>
-     <Link to="Product/adform"><p style={{marginTop:"40px",color:"#ffffff"}}>Analytics</p></Link>
-     <Link to="Product/adform"><p style={{marginTop:"40px",color:"#ffffff"}}>Product</p></Link>
-     <Link to="Product/adform"><p style={{marginTop:"40px",color:"#ffffff"}}>Orders</p></Link>
-     <Link to="Product/adform"><p style={{marginTop:"40px",color:"#ffffff"}}>Transaction</p></Link>
-     <Link to="Product/adform"><p style={{marginTop:"40px",color:"#ffffff"}}>Message</p></Link>
-     <Link to="Product/adform"><p style={{marginTop:"40px",color:"#ffffff"}}>Customers</p></Link>
+      <div style={{width:"330px",height:"1000px",float:"left", marginLeft:"-380px", backgroundColor:"#078282",marginTop:"-130px"}}>
+     <p style={{marginLeft:"-10px",marginBottom:"40px", fontSize:"40px",fontWeight:"bold",color:"#ffffff",marginTop:"20px"}}>Go MART</p>
+     <Link to="Product/adform"><p style={{marginTop:"70px",color:"#ffffff",fontWeight:"bold"}}>Dashboard</p></Link>
+     <Link to="Product/adform"><p style={{marginTop:"70px",color:"#ffffff",fontWeight:"bold"}}>Analytics</p></Link>
+     <Link to="Product/adform"><p style={{marginTop:"70px",color:"#ffffff",fontWeight:"bold"}}>Product</p></Link>
+     <Link to="Product/adform"><p style={{marginTop:"70px",color:"#ffffff",fontWeight:"bold"}}>Orders</p></Link>
+     <Link to="Product/adform"><p style={{marginTop:"70px",color:"#ffffff",fontWeight:"bold"}}>Transaction</p></Link>
+     <Link to="Product/adform"><p style={{marginTop:"70px",color:"#ffffff",fontWeight:"bold"}}>Message</p></Link>
+     <Link to="Product/adform"><p style={{marginTop:"70px",color:"#ffffff",fontWeight:"bold"}}>Customers</p></Link>
 
       </div>
       

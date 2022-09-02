@@ -19,7 +19,7 @@ const PropertyCatalog = () => {
   }, []);
   
   return (
-<div style={{backgroundColor:"#f0fff4"}}>
+<div style={{backgroundColor:"#ffffff"}}>
 <br/>
 
 
@@ -50,15 +50,15 @@ const PropertyCatalog = () => {
                 return value
             }
         }).map((ad) => (
-    <div className="card" style={{ width: "15rem", margin: "1rem", height:"20rem",marginLeft:"1px" }}>
+    <div className="card" style={{ width: "15rem", margin: "1rem", height:"20rem",marginLeft:"-2px" }}>
     <div className="card-bodies">
-    <div className="product-image" style={{height:"10px", marginTop:"10px"}}>
+    <div className="product-image" style={{height:"10px", marginTop:"10px",marginBottom:"-10px"}}>
         <img src={ad.image} alt="product" style={{width:"170px",height:"170px"}}/>
       </div>
-      <div style={{marginTop:"150px"}}><br/>
-      <p className="card-text" style={{marginLeft:"55px"}}>{ad.name} </p><br/><br/><br/>
-      <p className="card-title" style={{marginTop:"-20px"}}>{ad.brand}</p>
-      <p className="card-type">{ad.category}</p>
+      <div style={{marginTop:"150px",marginBottom:"-40px"}}><br/>
+      <p className="card-text" style={{marginLeft:"55px",color:"#000000"}}>{ad.name} </p><br/><br/><br/>
+      <p className="card-title" style={{marginTop:"-20px",marginBottom:"-5px",color: "rgba(0, 0, 0, 0.4)"}}>{ad.brand}</p>
+      <p className="card-type" style={{fontSize:"15px"}}>{ad.category}</p>
       <p className="card-area">{ad.price}</p>
       </div>
       <div>
