@@ -96,7 +96,7 @@ const printPdf = () => {
   else greet = "Good Night";
 
   useEffect(() => {
-    axios.get(`http://localhost:8000/api/Ads/all`).then((res) => {
+    axios.get(`http://localhost:8000/api/Products/all`).then((res) => {
       setAdsr(res.data);
     });
   }, []);
@@ -152,7 +152,7 @@ const printPdf = () => {
           
           <tr>
             <th scope="col">No.</th>
-            <th scope="col">Description</th>
+            <th scope="col">name</th>
             <th scope="col">Type</th>
             <th scope="col">Price(Rs.)</th>
             <th scope="col">Size(Purches)</th>
@@ -166,7 +166,7 @@ const printPdf = () => {
               <tr key={index}>
                 <th scope="row" style={{fontFamily:"sans-serif"}}>{index + 1}</th>
                 <td style={{fontFamily:"sans-serif"}}>
-                {adr.description}
+                {adr.name}
                 </td>
                 
                 <td style={{fontFamily:"sans-serif", fontWeight:1000}}>
@@ -180,8 +180,8 @@ const printPdf = () => {
                   </Link>
                 </td>
               
-                <td style={{fontFamily:"sans-serif"}}>{adr.priceRate}</td>
-                <td style={{fontFamily:"sans-serif"}}>{adr.sizeOfArea}</td>
+                <td style={{fontFamily:"sans-serif"}}>{adr.price}</td>
+                <td style={{fontFamily:"sans-serif"}}>{adr.smallDesc}</td>
                 <td style={{fontFamily:"sans-serif",width:"200px"}}>
                   <Link
                     className="btn btn-warning"

@@ -55,10 +55,12 @@ const PropertyCatalog = () => {
     <div className="product-image" style={{height:"10px", marginTop:"10px"}}>
         <img src={ad.image} alt="product" style={{width:"170px",height:"170px"}}/>
       </div>
-      <p className="card-text">Rs. {ad.name} </p><br/>
-      <p className="card-title">{ad.brand}</p>
+      <div style={{marginTop:"150px"}}><br/>
+      <p className="card-text" style={{marginLeft:"55px"}}>{ad.name} </p><br/><br/><br/>
+      <p className="card-title" style={{marginTop:"-20px"}}>{ad.brand}</p>
       <p className="card-type">{ad.category}</p>
       <p className="card-area">{ad.price}</p>
+      </div>
       <div>
       <span className="secondary p-1 px-4 rounded text-white" style={{backgroundColor:"#5cb85c"}}>
       <Link className="card-link"to={`/Product/Ad/${ad._id}/${ad.name}/${ad.brand}/${ad.category}/${ad.price}/${encodeURIComponent(ad.image)}`}
