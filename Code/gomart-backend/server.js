@@ -46,9 +46,11 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/Products", require("./routes/productRoutes"));
-app.use("/api/Order", require("./routes/order"));
-app.use("/api/shipping", require("./routes/shipping"));
-app.use("/api/delivery", require("./routes/delivery"));
+app.use("/api/Feedbacks", require("./routes/feedbackRoutes"));
+app.use("/api/Complaints", require("./routes/complaintRoutes"));
+app.use("/api/order", require("./routes/orderRoutes"));
+app.use("/api/shipping", require("./routes/shippingRoutes"));
+app.use("/api/delivery", require("./routes/deliveryRoutes"));
 
 app.listen(PORT, () => {
   logger.info(`Server is running on PORT: ${PORT}`);
