@@ -22,12 +22,10 @@ function App() {
       <BrowserRouter>
         <Navigator/>
           <Routes>
-            <Route path="/test" element={<ProductCatelog />} />
+            <Route path="/" element={<ProductCatelog />} />
             <Route path="/Product/adform" element={<AdvertiserForm />} />
             <Route path="/Product/adminReg" element={<AdminRegistration />} />
-            <Route
-          path="/Product/edit/:id/:name/:brand/:category/:image/:price/:smallDesc"
-          element={<EditAd />}
+            <Route path="/Product/edit/:id/:name/:brand/:price/:category/:smallDesc/:image" element={<EditAd />}
         />
             <Route path="/Product/admin" element={<AdminViewAds />} />
 
