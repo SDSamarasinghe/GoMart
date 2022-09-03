@@ -105,7 +105,7 @@ const printPdf = () => {
     
     swal({
       title: "Are you sure?",
-      text: "Once deleted, you will not be able to recover this Advertisment!",
+      text: "Once deleted, you will not be able to recover this Product!",
       icon: "warning",
       buttons: true,
       dangerMode: true,
@@ -183,9 +183,9 @@ const printPdf = () => {
                 
                 <td style={{fontFamily:"sans-serif", fontWeight:1000}}>
                   <Link
-                    to={`/Product/Ad/${adr._id}/${adr.name}/${adr.category}/${adr.brand}/${adr.smallDesc}/${
-                      adr.price
-                    }/${adr.phone}/${encodeURIComponent(adr.image)}`}
+                    to={`/Product/edit/${adr._id}/${adr.name}/${adr.brand}/${adr.price}/${adr.category}/${
+                      adr.smallDesc
+                    }/${encodeURIComponent(adr.image)}`}
                     style={{ textDecoration: "none" }}
                   >
                     {adr.brand}
@@ -197,8 +197,8 @@ const printPdf = () => {
                 <td style={{fontFamily:"sans-serif",width:"200px"}}>
                   <Link
                     className="btn btn-warning"
-                    to={`/Product/editAd/${adr._id}/${adr.name}/${adr.category}/${adr.brand}/${adr.smallDesc}/${
-                        adr.price
+                    to={`/Product/edit/${adr._id}/${adr.name}/${adr.brand}/${adr.price}/${adr.category}/${
+                        adr.smallDesc
                       }/${encodeURIComponent(adr.image)}`}
                   >
                     <i className="fas fa-edit"></i>&nbsp;Edit
