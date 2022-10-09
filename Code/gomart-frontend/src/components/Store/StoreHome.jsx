@@ -2,6 +2,11 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import StoreProductSingle from "./StoreProductSingle";
+import sl1 from "./img/4.png";
+import sl2 from "./img/2.png";
+import sl3 from "./img/5.png";
+import p1 from "./img/stayhome.png";
+import p2 from "./img/sd.png";
 
 const StoreHome = () => {
   const [products, setProducts] = useState([]);
@@ -46,7 +51,7 @@ const StoreHome = () => {
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img
-              src="https://i.ibb.co/277NHWS/Cover1.jpg"
+              src={sl1}
               class="d-block w-100"
               alt="..."
             />
@@ -59,7 +64,7 @@ const StoreHome = () => {
           </div>
           <div class="carousel-item">
             <img
-              src="https://i.ibb.co/2cdLp79/Untitled-1.jpg"
+              src={sl2}
               class="d-block w-100"
               alt="..."
             />
@@ -72,7 +77,7 @@ const StoreHome = () => {
           </div>
           <div class="carousel-item">
             <img
-              src="https://i.ibb.co/T1Qwh9K/fresh-stole.jpg"
+              src={sl3}
               class="d-block w-100"
               alt="..."
             />
@@ -116,7 +121,7 @@ const StoreHome = () => {
           <div className="category col-3">
             <Link to="/store/products/vegetables">
               <img
-                src="https://i.ibb.co/jLFzMwR/Cat1.jpg"
+                src="https://i.pinimg.com/736x/da/3b/66/da3b661c428d8ddde9e37087aa9753c1.jpg"
                 style={{
                   width: "300px",
                   height: "500px",
@@ -130,7 +135,7 @@ const StoreHome = () => {
           <div className="category col-3">
             <Link to="/store/products/fruits">
               <img
-                src="https://i.ibb.co/jJqxM2X/Cat2.jpg"
+                src="https://th.bing.com/th/id/R.075fb89439279aedda77377618cb8ddf?rik=yn5r92Cdc%2fzadg&riu=http%3a%2f%2fwww.berlindeluxe-shop.de%2fWebRoot%2fStore19%2fShops%2f63128107%2f58E2%2fA93F%2fAA0E%2fC860%2f97EB%2fC0A8%2f2BBA%2f4754%2f180074_GRIP_Handyhalter.jpg&ehk=3g6EDxPwvNRZSaCsh%2f1HkDMjdeYH%2f0Knyw7WRbYy0CI%3d&risl=&pid=ImgRaw&r=0"
                 style={{
                   width: "300px",
                   height: "500px",
@@ -144,7 +149,7 @@ const StoreHome = () => {
           <div className="category col-3">
             <Link to="/store/products/fertilizers">
               <img
-                src="https://i.ibb.co/Y8Jj926/Cat3.jpg"
+                src="https://th.bing.com/th/id/R.b14dd0102f2d1f52e515c8dffae6eab6?rik=TyZijoTgfqA1Jw&pid=ImgRaw&r=0"
                 style={{
                   width: "300px",
                   height: "500px",
@@ -158,7 +163,7 @@ const StoreHome = () => {
           <div className="category col-3">
             <Link to="/store/products/machinery">
               <img
-                src="https://i.ibb.co/VYrLn1z/Cat4.jpg"
+                src="https://i5.walmartimages.com/asr/6141f2d4-b0c9-4ac8-977f-f55573483ba0_1.35c4007b808eeb89e09c9f2a52570820.jpeg"
                 style={{
                   width: "300px",
                   height: "500px",
@@ -175,7 +180,7 @@ const StoreHome = () => {
         <img src="https://i.ibb.co/XJSwxr6/Cover1.jpg" alt="" />
       </div> */}
       <div className="latest-store-cover my-4">
-        <img src="https://i.ibb.co/XJSwxr6/Cover1.jpg" alt="" />
+        <img src={p1} alt="" />
       </div>
 
       <div className="latest-store-items p-4">
@@ -201,7 +206,7 @@ const StoreHome = () => {
         </div>
 
         <div className="latest-store-cover my-4">
-          <img src="https://i.ibb.co/Tqz0hW4/banner3sjndjs.jpg" alt="" />
+          <img src={p2} alt="" />
         </div>
       </div>
     </div>
