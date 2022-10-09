@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import product from "./img/add-product.png";
 
 
 function withParams(Component) {
@@ -82,11 +83,11 @@ class AdminUpdateAds extends Component {
   render() {
     return (
       <div style={{width:"1000px"}}>
-      <div className="col-md-8 mt-4 mx-auto" style={{marginBottom:"40px",marginTop:"200px", border:"2px solid #078282"}}>
+      <div className="col-md-8 mt-4 mx-auto" style={{marginBottom:"180px",marginTop:"200px", border:"2px solid #078282"}}>
         
         
         
-        <form className="needs-validation" style={{marginLeft:"30px", marginRight:"30px",marginTop:"30px"}}>
+        <form className="needs-validation" style={{marginLeft:"30px", marginRight:"30px",marginTop:"72px"}}>
         <div style={{marginLeft:"-500px"}}>
         <h1
           style={{
@@ -95,17 +96,18 @@ class AdminUpdateAds extends Component {
             fontSize: "60px",
             fontWeight: "bold",
             letterSpacing: "-1px",
-            marginBottom:"50px",
+            marginBottom:"80px",
+            marginTop:"-50px",
             lineHeight: "1",
             textAlign: "center",
           }}
         >
-          <span className="p-1 px-4 rounded text-white" style={{backgroundColor:"#078282",marginLeft:"300px"}}>
+          <span className="p-1 px-4 rounded text-white" style={{backgroundColor:"#078282",marginLeft:"300px",marginBottom:"200px"}}>
           Edit Product
           </span>
         </h1>
         </div>
-          <div className="form-group" style={{ marginBottom: "15px" }}>
+          <div className="form-group" style={{ marginBottom: "10px" }}>
             <input
               type="text"
               className="form-control"
@@ -140,18 +142,7 @@ class AdminUpdateAds extends Component {
             />
           </div>
 
-          <div className="form-group" style={{ marginBottom: "15px" }}>
-         
-            <input
-            style={{height:"100px"}}
-              type="text"
-              className="form-control"
-              name="smallDes"
-              placeholder="Description"
-              value={this.state.smallDes}
-              onChange={this.handleInputChange}
-            />
-          </div>
+          
 
           <div className="form-group" style={{ marginBottom: "15px" }}>
           
@@ -162,6 +153,7 @@ class AdminUpdateAds extends Component {
               placeholder="Category"
               value={this.state.category}
               onChange={this.handleInputChange}
+              readOnly
             />
           </div>
 
@@ -189,6 +181,21 @@ class AdminUpdateAds extends Component {
           </button>
           </center>
         </form>
+      </div>
+      <div
+        style={{
+          float: "right",
+          marginTop: "-580px",
+          marginRight: "-550px",
+          border: "3px solid #FFFFFF",
+        }}
+      >
+        <img
+          width="400"
+          height="400"
+          style={{marginTop:"45px",marginRight:"140px"}}
+          src={product}
+        />
       </div>
       </div>
     );

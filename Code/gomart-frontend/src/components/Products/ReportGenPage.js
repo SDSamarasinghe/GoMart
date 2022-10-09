@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import "./Admins.css";
 import swal from "sweetalert";
 
-const AdminViewAds = () => {
+const ReportGenPage = () => {
   const [adsr, setAdsr] = useState(undefined);
 
   const date = new Date();
@@ -90,10 +90,7 @@ const printPdf = () => {
     });
   };
 
-  if (hrs < 12) greet = "Good Morning";
-  else if (hrs >= 12 && hrs < 17) greet = "Good Afternoon";
-  else if (hrs >= 17 && hrs < 19) greet = "Good Evening";
-  else greet = "Good Night";
+  
 
   useEffect(() => {
     axios.get(`http://localhost:8000/api/Products/all`).then((res) => {
@@ -101,75 +98,22 @@ const printPdf = () => {
     });
   }, []);
 
-  const onDelete = (id) => {
-    
-    swal({
-      title: "Are you sure?",
-      text: "Once deleted, you will not be able to recover this Product!",
-      icon: "warning",
-      buttons: true,
-      dangerMode: true,
-    }).then((willDelete) => {
-      if (willDelete) {
-        axios
-          .delete(`http://localhost:8000/api/Products/${id}`)
-          .then(() => {
-            swal("Advertisment Deleted Successfully!", {
-              icon: "success",
-            });
-
-     
-          });
-      }
-    });
-  };
+  
 
   return (
     
     <div className="col-md-8 mt-4 mx-auto" style={{marginBottom:"20px"}}>
       <div style={{marginRight:"300px"}}>
      
-      <h3> <span className="secondary p-1 px-4 rounded text-white" style={{backgroundColor:"#5cb85c",marginRight:"550px"}}>{greet} Admin</span></h3>
-      
+    
           
           <br/>
           <div style={{marginLeft:"680px"}}>
-          <button className="btn btn-warning" style={{height:"40px",marginRight:"60px"}}>
-        {" "}
-        <Link
-          to="/Product/report"
-          style={{ extDecoration: "none", color: "white"}}
-        >
-          Go to products report
-        </Link>
-        <br />
-        <br/>
-      </button>
-          <button className="btn btn-success" style={{height:"40px"}}>
-        {" "}
-        <Link
-          to="/Product/adform"
-          style={{ extDecoration: "none", color: "white"}}
-        >
-          Add New Product
-        </Link>
-        <br />
-        <br/>
-      </button>
+          <button className="btn btn-warning" onClick={printPdf} style={{marginRight:"60px"}}>Download Report</button>
+    
       </div>
       </div>
 
-      <div style={{width:"330px",height:"1000px",float:"left", marginLeft:"-380px", backgroundColor:"#078282",marginTop:"-130px"}}>
-     <p style={{marginLeft:"-10px",marginBottom:"40px", fontSize:"40px",fontWeight:"bold",color:"#ffffff",marginTop:"20px"}}>Go MART</p>
-     <Link to="Product/adform"><p style={{marginTop:"70px",color:"#ffffff",fontWeight:"bold"}}>Dashboard</p></Link>
-     <Link to="Product/adform"><p style={{marginTop:"70px",color:"#ffffff",fontWeight:"bold"}}>Analytics</p></Link>
-     <Link to="Product/adform"><p style={{marginTop:"70px",color:"#ffffff",fontWeight:"bold"}}>Product</p></Link>
-     <Link to="Product/adform"><p style={{marginTop:"70px",color:"#ffffff",fontWeight:"bold"}}>Orders</p></Link>
-     <Link to="Product/adform"><p style={{marginTop:"70px",color:"#ffffff",fontWeight:"bold"}}>Transaction</p></Link>
-     <Link to="Product/adform"><p style={{marginTop:"70px",color:"#ffffff",fontWeight:"bold"}}>Message</p></Link>
-     <Link to="Product/adform"><p style={{marginTop:"70px",color:"#ffffff",fontWeight:"bold"}}>Customers</p></Link>
-
-      </div>
       
       <table className="table table-hover pdfdiv" style={{ marginTop: "40px", width:"1000px", marginLeft:"130px"}}>
         <thead>
@@ -180,7 +124,7 @@ const printPdf = () => {
             <th scope="col">Brand</th>
             <th scope="col">Category</th>
             <th scope="col">Price(Rs.)</th>
-            <th scope="col">Action</th>
+           
             
           </tr>
         </thead>
@@ -193,32 +137,18 @@ const printPdf = () => {
                 {adr.name}
                 </td>
                 
-                <td style={{fontFamily:"sans-serif", fontWeight:1000}}>
-                  <Link
-                    to={`/Product/edit/${adr._id}/${adr.name}/${adr.brand}/${adr.price}/${adr.category}/${adr.smallDesc}/${encodeURIComponent(adr.image)}`}
-                    style={{ textDecoration: "none" }}
-                  >
+                <td style={{fontFamily:"sans-serif"}}>
+                 
                     {adr.brand}
-                  </Link>
+                 
                 </td>
               
                 <td style={{fontFamily:"sans-serif"}}>{adr.category}</td>
                 <td style={{fontFamily:"sans-serif"}}>{adr.price}</td>
                 <td style={{fontFamily:"sans-serif",width:"200px"}}>
-                  <Link
-                    className="btn btn-warning"
-                    to={`/Product/edit/${adr._id}/${adr.name}/${adr.brand}/${adr.price}/${adr.category}/${adr.smallDesc}/${encodeURIComponent(adr.image)}`}
-                  >
-                    <i className="fas fa-edit"></i>&nbsp;Edit
-                  </Link>
+                  
                   &nbsp;
-                  <Link
-                    className="btn btn-danger"
-                    to="#"
-                    onClick={() => onDelete(adr._id)}
-                  >
-                    <i className="far fa-trash-alt"></i>&nbsp;Delete
-                  </Link>
+                 
                 </td>
                 <td>
                   <Link to={""}>
@@ -237,4 +167,4 @@ const printPdf = () => {
     </div>
   );
 };
-export default AdminViewAds;
+export default ReportGenPage;

@@ -69,13 +69,13 @@ const AdvertiserForm = () => {
   };
 
   const demo = () => {
-    setName("Samsung S20");
-    setBrand("Samsung");
-    setPrice("233,000");
+    setName("Apple 13");
+    setBrand("Apple");
+    setPrice("533,000");
     setCategory("Mobile");
-    setSmallDesc("description");
+    setSmallDesc("Apple iPhone 14 Plus Price in Isle of Maniption");
     setImg(
-      "https://th.bing.com/th/id/R.af33f17558bd971ed68403483f4a1c4a?rik=Y4WMeusyShvTrA&riu=http%3a%2f%2fwww.southsrilankaproperty.com%2fwp-content%2fuploads%2f2017%2f08%2fAttractive-Coconut-Plantation-Plot-for-a-Villa-2.jpg&ehk=ibkoQ0N5qejqrN734rJBrnhgMtlOWCLK0LnB8z552mU%3d&risl=&pid=ImgRaw&r=0"
+      "https://www.mobilepriceall.com/wp-content/uploads/2022/09/Apple-iPhone-14-Plus-1024x1024.jpg"
     );
   };
 

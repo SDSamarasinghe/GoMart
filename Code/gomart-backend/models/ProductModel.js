@@ -6,12 +6,12 @@ const ProductSchema = new mongoose.Schema({
     required: true,
   },
 
-  brand: {
+  category: {
     type: String,
     required: true,
   },
 
-  category: {
+  price: {
     type: String,
     required: true,
   },
@@ -21,17 +21,17 @@ const ProductSchema = new mongoose.Schema({
     required: true,
   },
 
-  price: {
-    type: Number,
-    
+  smallDes: {
+    type: String,
+    required: true,
   },
 
-  smallDes: {
+  longDes: {
     type: String,
     required: true,
   },
 });
 
-const Product = mongoose.model("StoreProduct1", ProductSchema);
+const Product = mongoose.model("StoreProduct", ProductSchema);
 
 module.exports = Product;
