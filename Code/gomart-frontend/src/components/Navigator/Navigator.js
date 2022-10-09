@@ -38,7 +38,7 @@ const Navigator = () => {
                     <ul className="dropdown arrow-top">
                       <li>
                         <Link to="/login">
-                          <a>Events</a>
+                          <a>Admin Login</a>
                         </Link>
                       </li>
                       <li className="has-children">
