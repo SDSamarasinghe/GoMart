@@ -51,6 +51,7 @@ app.use("/api/Complaints", require("./routes/ComplaintsRoutes"));
 app.use("/api/order", require("./routes/order"));
 app.use("/api/shipping", require("./routes/shipping"));
 app.use("/api/delivery", require("./routes/delivery"));
+app.use("/api/users", require("./routes/userManageRoutes"));
 
 //customer routes
 app.use("api/customer", require("./routes/UserRoutes"));

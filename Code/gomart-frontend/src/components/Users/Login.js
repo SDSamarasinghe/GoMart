@@ -25,7 +25,7 @@ const Login = () => {
       })
       .then((res) => {
         setWaiting(!waiting);
-        navigate("/store/store-admin-products");
+        navigate("/Product/admin");
         return;
       })
       .catch((error) => {

@@ -55,7 +55,7 @@ class AdminUpdateAds extends Component {
 
     axios.put(`http://localhost:8000/api/Products/${id}`, data).then((res) => {
       alert("Ad updated successfully!");
-      window.location.href = "/Ads/AdminView";
+      window.location.href = "/Product/admin";
     });
   };
 
@@ -109,7 +109,7 @@ class AdminUpdateAds extends Component {
             <input
               type="text"
               className="form-control"
-              name="town"
+              name="name"
               placeholder="Name"
               value={this.state.name}
               onChange={this.handleInputChange}
@@ -121,7 +121,7 @@ class AdminUpdateAds extends Component {
             <input
               type="text"
               className="form-control"
-              name="AgentRef"
+              name="brand"
               placeholder="Brand"
               value={this.state.brand}
               onChange={this.handleInputChange}
@@ -133,9 +133,9 @@ class AdminUpdateAds extends Component {
             <input
               type="text"
               className="form-control"
-              name="Category"
-              placeholder="Category"
-              value={this.state.category}
+              name="price"
+              placeholder="Price"
+              value={this.state.price}
               onChange={this.handleInputChange}
             />
           </div>
@@ -146,33 +146,33 @@ class AdminUpdateAds extends Component {
             style={{height:"100px"}}
               type="text"
               className="form-control"
-              name="description"
-              placeholder="Image URL"
-              value={this.state.image}
-              onChange={this.handleInputChange}
-            />
-          </div>
-
-          <div className="form-group" style={{ marginBottom: "15px" }}>
-          
-            <input
-              type="text"
-              className="form-control"
-              name="sizeOfArea"
-              placeholder="Price"
-              value={this.state.price}
-              onChange={this.handleInputChange}
-            />
-          </div>
-
-          <div className="form-group" style={{ marginBottom: "15px" }}>
-          
-            <input
-              type="text"
-              className="form-control"
-              name="priceRate"
+              name="smallDes"
               placeholder="Description"
               value={this.state.smallDes}
+              onChange={this.handleInputChange}
+            />
+          </div>
+
+          <div className="form-group" style={{ marginBottom: "15px" }}>
+          
+            <input
+              type="text"
+              className="form-control"
+              name="category"
+              placeholder="Category"
+              value={this.state.category}
+              onChange={this.handleInputChange}
+            />
+          </div>
+
+          <div className="form-group" style={{ marginBottom: "15px" }}>
+          
+            <input
+              type="text"
+              className="form-control"
+              name="image"
+              placeholder="Image"
+              value={this.state.image}
               onChange={this.handleInputChange}
             />
           </div>
