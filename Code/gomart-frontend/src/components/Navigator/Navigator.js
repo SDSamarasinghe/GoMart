@@ -37,43 +37,8 @@ const Navigator = () => {
                     </a>
                     <ul className="dropdown arrow-top">
                       <li>
-                        <Link to="/store">
-                          <a>Store</a>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/Ulabs">
-                          <a>Labs</a>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/coursehome">
-                          <a>Education</a>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/HHome">
-                          <a>Healthcare</a>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/CareerHome">
-                          <a>Career Management</a>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/Ads/properties">
-                          <a>Lands</a>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/productSee">
-                          <a>Products Management</a>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/events/home">
-                          <a>Events</a>
+                        <Link to="/login">
+                          <a>Admin Login</a>
                         </Link>
                       </li>
                       <li className="has-children">
@@ -83,7 +48,7 @@ const Navigator = () => {
                         </a>
                         <ul className="dropdown">
                           <li>
-                            <Link to="/store/store-admin-products">
+                            <Link to="/Product">
                               <a>Store Products Admin</a>
                             </Link>
                           </li>
