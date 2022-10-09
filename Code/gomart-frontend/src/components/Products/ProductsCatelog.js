@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Ads.css";
+import "./Store.css";
 import { Link } from "react-router-dom";
 
 const PropertyCatalog = () => {
@@ -139,12 +140,7 @@ const PropertyCatalog = () => {
 
         <div
           className="products-list row p-5"
-          style={{
-            backgroundColor: "#D3D3D3",
-            boxShadow: "inset 0 0 10px #ffffff",
-            marginLeft: "-250px",
-            marginRight: "-250px",
-          }}
+          
         >
           {ads &&
             ads
@@ -159,7 +155,7 @@ const PropertyCatalog = () => {
               })
               .map((ad) => (
                 <div
-                  className="card"
+                  className="col mt-4"
                   style={{
                     width: "15rem",
                     margin: "1rem",
@@ -173,63 +169,23 @@ const PropertyCatalog = () => {
                     class="border"
                     style={{ marginTop: "8px", marginBottom: "5px" }}
                   >
-                    <div className="card-bodies">
-                      <div
-                        className="product-image"
-                        style={{
-                          height: "10px",
-                          marginTop: "10px",
-                          marginBottom: "-10px",
-                        }}
-                      >
-                        <img
-                          src={ad.image}
-                          alt="product"
-                          style={{ width: "170px", height: "170px" }}
-                        />
-                      </div>
-                      <center>
-                        <div
-                          style={{ marginTop: "150px", marginBottom: "-40px" }}
-                        >
-                          <br />
+                    <div className="product-card">
+      <div className="product-image">
+        <img src={ad.image} alt="product" />
+      </div>
 
-                          <p
-                            className="card-text"
-                            style={{
-                              marginLeft: "55px",
-                              color: "#000000",
-                              marginBottom: "10px",
-                            }}
-                          >
-                            {ad.name}{" "}
-                          </p>
-                          <br />
-                          <br />
-                          <br />
+      <div
+        className="store-store-product-title"
+        style={{ color: "#6d6d6d", textAlign: "center" }}
+      >
+        <p className="my-2" style={{ fontSize: "18px", color: "#333" }}>
+          <b>{ad.name}</b>
+        </p>
+        <p style={{ fontSize: "24px", color: "#12af39" }}>
+          <b>${ad.price}</b>
+        </p>
 
-                          <p
-                            className="card-title"
-                            style={{
-                              marginTop: "-20px",
-                              marginBottom: "-5px",
-                              color: "rgba(0, 0, 0, 0.4)",
-                            }}
-                          >
-                            {ad.brand}
-                          </p>
-                          <p className="card-type" style={{ fontSize: "15px" }}>
-                            {ad.category}
-                          </p>
-                          <p className="card-area">{ad.price}</p>
-                        </div>
-                      </center>
-                      <div>
-                        <span
-                          className="secondary p-1 px-4 rounded text-white"
-                          style={{ backgroundColor: "#078282" }}
-                        >
-                          <Link
+        <Link
                             className="card-link"
                             to={`/Product/Ad/${ad._id}/${ad.name}/${ad.brand}/${
                               ad.price
@@ -240,9 +196,8 @@ const PropertyCatalog = () => {
                           >
                             more..
                           </Link>
-                        </span>
-                      </div>
-                    </div>
+      </div>
+    </div>
                   </span>
                   <div className="card-body"></div>
                 </div>
