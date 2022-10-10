@@ -37,7 +37,7 @@ function App() {
       <BrowserRouter>
         <Navigator/>
           <Routes>
-            <Route path="/" element={<ProductCatelog />} />
+            <Route path="/prod" element={<ProductCatelog />} />
             <Route path="/Product/adform" element={<AdvertiserForm />} />
             <Route path="/Product/adminReg" element={<AdminRegistration />} />
             <Route path="/Product/edit/:id/:name/:brand/:price/:category/:smallDesc/:image" element={<EditAd />}
@@ -53,7 +53,7 @@ function App() {
             <Route path="/profile" element={<Profile />} />
 
              {/* Store Routes */}
-        <Route path="/store" element={<StoreHome />} />
+        <Route path="/" element={<StoreHome />} />
         <Route path="/store/products/:category" element={<StoreProducts />} />
         <Route
           path="/store/products/product/:id"

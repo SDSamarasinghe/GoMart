@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import "./Store.css";
+import up from "./img/underpic.png";
 
 const StoreProductsDetails = () => {
   const [quantity, setQuantity] = useState(0);
@@ -20,9 +21,9 @@ const StoreProductsDetails = () => {
   return (
     <div className="mx-vw-100 min-vh-100">
       <div className="latest-store-details-cover position-relative">
-        <img src="https://i.ibb.co/rkfrhCm/banner18.webp" alt="" />
+        <img src={up} alt="" />
         <div className="store-products-top text-secondary position-absolute top-50 start-50 translate-middle">
-          <p> Home > Products > {product && product.name} </p>
+          <p> Home  Products  {product && product.name} </p>
         </div>
       </div>
       <div className="d-flex">
