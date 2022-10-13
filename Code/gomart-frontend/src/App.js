@@ -109,7 +109,6 @@ function App() {
 
             <Route path="/Product/report" element={<ReportGenPage />} />
 
-
             {/* Order */}
            <Route path="/order/addorder" element={<Addorder />} />
           <Route path="/order/viewdeleteorder" element={< Viewdeleteorder />}/>
