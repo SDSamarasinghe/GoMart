@@ -12,6 +12,24 @@ import EditAd from "./components/Products/EditAd";
 import AdminViewAds from "./components/Products/AdminViewAds";
 import DisplayAd from "./components/Products/DisplayAd";
 
+
+/*Order*/
+import Addorder from "./components/order/addorder";
+import Viewdeleteorder from "./components/order/viewdeleteorder";
+import EditOrder from "./components/order/editorder";
+import EditOrder1 from "./components/order/editorder1";
+
+/*shipping*/
+import Addshipping from "./components/shipping/addshipping";
+import Editshipping from "./components/shipping/editshipping";
+import Viewdeleteshipping from "./components/shipping/viewdeleteshipping";
+
+/* delivery */
+import Adddelivery from "./components/delivery/adddelivery";         
+import Editdelivery from "./components/delivery/editdelivery"; 
+import Viewdeletedelivery from "./components/delivery/viewdeletedelivery"; 
+
+
 //Store Components
 import StorePaymentScreen from "./components/Store/StorePaymentScreen";
 import StoreAdminProductsEdit from "./components/Store/StoreAdminProductsEdit";
@@ -27,6 +45,8 @@ import StoreAddProductForm from "./components/Store/StoreAddProductForm";
 import Login from "./components/Users/Login";
 import Register from "./components/Users/Register";
 import Profile from "./components/Users/Profile";
+
+
 
 import ReportGenPage from "./components/Products/ReportGenPage";
 
@@ -91,6 +111,25 @@ function App() {
 
             <Route path="/Product/report" element={<ReportGenPage />} />
           </Routes>
+
+          {/* Order */}
+          <Route path="/order/addorder" element={<Addorder />} />
+          <Route path="/order/viewdeleteorder" element={< Viewdeleteorder />}/>
+          <Route path="/order/editorder/:id" element={<EditOrder />} />
+          <Route path="/order/editorder" element={<EditOrder />} />
+          <Route path="/order/editorder1" element={<EditOrder1 />} />
+
+          {/* Shipping */}
+          <Route path="/shipping/addshipping" element={<Addshipping />}></Route> 
+          <Route path="/shipping/editshipping" element={<Editshipping />}></Route>
+          <Route path="/shipping/viewdeleteshipping" element={< Viewdeleteshipping />}></Route>
+
+          {/* delivery */}
+          <Route path="/delivery/adddelivery" element={<Adddelivery />}></Route>           
+          <Route path="/delivery/editdelivery" element={<Editdelivery />}></Route> 
+          <Route path="/delivery/viewdeletedelivery" element={<Viewdeletedelivery />}></Route> 
+
+          
         <Footer/>
       </BrowserRouter>
     </div>
