@@ -29,6 +29,20 @@ import StoreProductsDetails from "./components/Store/StoreProductsDetails";
 import StoreOrderForm from "./components/Store/StoreOrderForm";
 import StoreAddProductForm from "./components/Store/StoreAddProductForm";
 
+
+import AddFeedback from "./components/Feedbacks/AddFeedback";
+import AdminFeedbackView from "./components/Feedbacks/AdminFeedbackView";
+import FeedbackView from "./components/Feedbacks/FeedbackView";
+import EditFeedback from "./components/Feedbacks/EditFeedback";
+import AdminEditFeedback from "./components/Feedbacks/AdminEditFeedback";
+import EditFeedbackNew from "./components/Feedbacks/EditFeedbackNew";
+import AddComplaint from "./components/Complaints/AddComplaint";
+import AdminComplaintView from "./components/Complaints/AdminComplaintView";
+import ComplaintView from "./components/Complaints/ComplaintView";
+import EditComplaint from "./components/Complaints/EditComplaint";
+import AdminEditComplaint from "./components/Complaints/AdminEditComplaint";
+
+
 import Login from "./components/Users/Login";
 import Register from "./components/Users/Register";
 import Profile from "./components/Users/Profile";
@@ -100,6 +114,23 @@ function App() {
 
 
             <Route path="/Product/report" element={<ReportGenPage />} />
+
+
+             {/*Feedbacks*/}
+        <Route path="/Feedbacks/AddFeedback" element={<AddFeedback />} />
+        <Route path="/Feedbacks/AdminFeedbackView" element={<AdminFeedbackView />} />
+        <Route path="/Feedbacks/FeedbackView" element={<FeedbackView />} />
+        <Route path="/Feedbacks/EditFeedback/:id/:fname/:lname/:date/:email/:pro_qua_fb/:deli_dri_rate/:deli_tme_rate/:recommendation/:suggestions" element={<EditFeedback />} />
+        <Route path="/Feedbacks/AdminEditFeedback/:id/:fname/:lname/:date/:email/:pro_qua_fb/:deli_dri_rate/:deli_tme_rate/:recommendation/:suggestions" element={<AdminEditFeedback />} />
+        <Route path="/Feedbacks/EditFeedbackNew/:id" element={<EditFeedbackNew />} />
+
+        {/* Complaints */}
+        <Route path="/Complaints/AddComplaint" element={<AddComplaint />} />
+        <Route path="/Complaints/AdminComplaintView" element={<AdminComplaintView />} />
+        <Route path="/Complaints/ComplaintView" element={<ComplaintView />} />
+        <Route path="/Complaints/EditComplaint/:id/:fname/:lname/:date/:email/:pro_qua_fb/:deli_dri_rate/:deli_tme_rate/:recommendation/:suggestions" element={<EditComplaint />} />
+        <Route path="/Complaints/AdminEditComplaint/:id/:fname/:lname/:date/:email/:pro_qua_fb/:deli_dri_rate/:deli_tme_rate/:recommendation/:suggestions" element={<AdminEditComplaint />} />
+        
           </Routes>
         <Footer/>
       </BrowserRouter>
