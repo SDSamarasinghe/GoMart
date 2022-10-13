@@ -25,7 +25,7 @@ const Login = () => {
       })
       .then((res) => {
         setWaiting(!waiting);
-        navigate("/");
+        navigate("/store/store-admin-payments");
         return;
       })
       .catch((error) => {
@@ -43,15 +43,13 @@ const Login = () => {
     <div className="container min-vw-100 max-vw-100 vw-100 vh-100 min-vh-100">
      
       <div className="row  w-100 h-100 d-flex align-items-center justify-content-center">
-      <div className="page" style={{marginLeft:"-600px",marginBottom:"-400px",marginRight:"650px"}}>
-            <h3 className="heading" style={{fontSize:"60px",fontWeight:"1"}}>ADMIN LOGIN</h3>
-          </div>
+      
         <div className="col  w-100 h-100 d-flex align-items-center justify-content-center">
           <form className="jumbotron">
             {error && (
               <p className="text-center text-danger form-text"> {error} </p>
             )}
-
+              <h2>Payments Details Admin</h2>
             <div className="mb-3">
               <label for="exampleInputEmail1" className="form-label">
                 Email address
@@ -97,20 +95,7 @@ const Login = () => {
             </button>
           </form>
         </div>
-        <div className="col text-center">
-          <h3> Haven't got an account yet? </h3>
-          <p> Click on the below button to register! </p>
-
-          <Link to="/sign-up">
-            <button
-              type="button"
-              className="btn btn-primary"
-              style={{ backgroundColor: "#12af39" }}
-            >
-              Sign up
-            </button>
-          </Link>
-        </div>
+        
       </div>
     </div>
   );

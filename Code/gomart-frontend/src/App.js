@@ -12,6 +12,11 @@ import EditAd from "./components/Products/EditAd";
 import AdminViewAds from "./components/Products/AdminViewAds";
 import DisplayAd from "./components/Products/DisplayAd";
 
+//loglist
+import OrdLogin from "./components/Loglist/OrdLogin";
+import PayLogin from "./components/Loglist/PayLogin";
+import ProdLogin from "./components/Loglist/ProdLogin";
+
 //Store Components
 import StorePaymentScreen from "./components/Store/StorePaymentScreen";
 import StoreAdminProductsEdit from "./components/Store/StoreAdminProductsEdit";
@@ -69,6 +74,11 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/sign-up" element={<Register />} />
             <Route path="/profile" element={<Profile />} />
+
+            {/* Loglist */}
+            <Route path="/Prodlogin" element={<ProdLogin />} />
+            <Route path="/Paylogin" element={<PayLogin />} />
+            <Route path="/Orderlogin" element={<OrdLogin />} />
 
              {/* Store Routes */}
         <Route path="/" element={<StoreHome />} />

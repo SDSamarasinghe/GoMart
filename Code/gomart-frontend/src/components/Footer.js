@@ -38,12 +38,7 @@ function Footer() {
             <div className="col-md-5 mb-md-0 mb-3 text-start">
               <h5 className="text-uppercase font-weight-bold">About</h5>
               <small>
-                Welcome to AgroTech LLC, your number one source for all things
-                agricultural. We're dedicated to providing you the best of
-                agricultural product, with a focus on dependability. customer
-                service, and farmer support. We're working to turn our passion
-                for agricultural products into a booming online store. We hope
-                you enjoy our products as much as we enjoy offering them to you.
+              We regretfully inform you that there will be delays in deliveries due to the ongoing fuel crisis. Outstation areas will experience further delays. Once again sorry for the inconvenience caused.
               </small>
             </div>
           </div>
