@@ -42,51 +42,24 @@ const Navigator = () => {
                         </Link>
                       </li>
                       <li className="has-children">
-                        <Link to="/">Services</Link>
-                        <a href="#">
-                          Admins <i class="fa-solid fa-caret-down"></i>
-                        </a>
+                        <Link to="/">Admins</Link>
                         <ul className="dropdown">
                           <li>
-                            <Link to="/Product">
+                            <Link to="/Prodlogin">
                               <a>Store Products Admin</a>
                             </Link>
                           </li>
                           <li>
-                            <Link to="/store/store-admin-orders">
-                              <a>Store Orders Admin</a>
-                            </Link>
-                          </li>
-                          <li>
-                            <Link to="/store/store-admin-payments">
+                            <Link to="/Paylogin">
                               <a>Store Payments Admin</a>
                             </Link>
                           </li>
                           <li>
-                            <Link to="/VacancyAdmin">
-                              <a>Vacancy Admin</a>
+                            <Link to="/Orderlogin">
+                              <a>Store Order Admin</a>
                             </Link>
                           </li>
-                          <li>
-                            <Link to="/GuidanceAdmin">
-                              <a>Guidance Admin</a>
-                            </Link>
-                          </li>
-                          <li>
-                            <Link to="/ApplyVacancyAdmin">
-                              <a>Apply Vacancy Admin</a>
-                            </Link>
-                          </li>
-                          <li>
-                            <Link to="/ApplyGuidanceAdmin">
-                              <a>Apply Guidamce Admin</a>
-                            </Link>
-                          </li>
-                          <li>
-                            <Link to="/CandidateAdmin">
-                              <a>Candidate Admin</a>
-                            </Link>
-                          </li>
+
                         </ul>
                       </li>
                     </ul>

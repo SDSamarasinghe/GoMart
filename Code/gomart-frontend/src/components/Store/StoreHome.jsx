@@ -119,7 +119,7 @@ const StoreHome = () => {
 
         <div className="category-list row gy-4 px-5">
           <div className="category col-3">
-            <Link to="/store/products/vegetables">
+            <a href="https://idealz.lk/product-category/audio-appliances/">
               <img
                 src="https://i.pinimg.com/736x/da/3b/66/da3b661c428d8ddde9e37087aa9753c1.jpg"
                 style={{
@@ -129,11 +129,11 @@ const StoreHome = () => {
                 }}
                 alt=""
               />
-            </Link>
+            </a>
           </div>
 
           <div className="category col-3">
-            <Link to="/store/products/fruits">
+            <a href="https://idealz.lk/product-category/gadgets/">
               <img
                 src="https://th.bing.com/th/id/R.075fb89439279aedda77377618cb8ddf?rik=yn5r92Cdc%2fzadg&riu=http%3a%2f%2fwww.berlindeluxe-shop.de%2fWebRoot%2fStore19%2fShops%2f63128107%2f58E2%2fA93F%2fAA0E%2fC860%2f97EB%2fC0A8%2f2BBA%2f4754%2f180074_GRIP_Handyhalter.jpg&ehk=3g6EDxPwvNRZSaCsh%2f1HkDMjdeYH%2f0Knyw7WRbYy0CI%3d&risl=&pid=ImgRaw&r=0"
                 style={{
@@ -143,11 +143,11 @@ const StoreHome = () => {
                 }}
                 alt=""
               />
-            </Link>
+            </a>
           </div>
 
           <div className="category col-3">
-            <Link to="/store/products/fertilizers">
+            <a href="https://www.cameralk.com/">
               <img
                 src="https://th.bing.com/th/id/R.b14dd0102f2d1f52e515c8dffae6eab6?rik=TyZijoTgfqA1Jw&pid=ImgRaw&r=0"
                 style={{
@@ -157,11 +157,11 @@ const StoreHome = () => {
                 }}
                 alt=""
               />
-            </Link>
+            </a>
           </div>
 
           <div className="category col-3">
-            <Link to="/store/products/machinery">
+            <a href="https://idealz.lk/product-category/smartphones-tablets/">
               <img
                 src="https://i5.walmartimages.com/asr/6141f2d4-b0c9-4ac8-977f-f55573483ba0_1.35c4007b808eeb89e09c9f2a52570820.jpeg"
                 style={{
@@ -171,7 +171,7 @@ const StoreHome = () => {
                 }}
                 alt=""
               />
-            </Link>
+            </a>
           </div>
         </div>
       </div>
