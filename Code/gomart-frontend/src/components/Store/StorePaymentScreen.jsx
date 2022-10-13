@@ -213,7 +213,7 @@ const StorePaymentScreen = () => {
         </div>
 
         <div className="store-bought-product-item mx-4 mt-4 store-payment-form d-flex">
-          <img src={product?.image} alt="fruit" />
+          <img src={product?.image} alt="Accessories" />
 
           <div className="mx-4">
             <p> {product?.name} </p>
