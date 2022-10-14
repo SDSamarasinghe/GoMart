@@ -19,14 +19,15 @@ const StoreProductsDetails = () => {
   }, [params]);
 
   const addToCart = async(id) => {
-    const product = {
-        productName : id.productName,
+    const cartItem = {
+        name : id.name,
         price : id.price,
+        image : id.image,
         buyingQty : quantity
     }
-
-    await axios.post("http://localhost:5000/api/customerCart/cart", product);
-    alert(`Working ${product.productName}`);
+    // alert("Working 111");
+    await axios.post("http://localhost:8000/api/customerCart/cart", cartItem);
+    alert(`Working ${cartItem.productName}`);
 }
 
   return (
@@ -83,16 +84,16 @@ const StoreProductsDetails = () => {
                       onClick={() => {
                         navigate(
                           `/store/order/store-order-create/${product._id}/${quantity}/${product.price}`
-                        );
-                      }}
-                      id="product-details-buy-now"
-                      className="btn product-details-buy-now w-100"
-                    >
-                      Buy Now
-                    </button>
-                    <button className='btn btn-warning' onClick={() => addToCart(product)}>Add to Cart</button>
-                  </div>
-                </div>
+                          );
+                        }}
+                          id="product-details-buy-now"
+                          className="btn product-details-buy-now w-100"
+                          >
+                          Buy Now
+                          </button>
+                          <button className='btn btn-warning' disabled={quantity <= 0} onClick={() => addToCart(product)}>Add to Cart</button>
+                          </div>
+                          </div>
               </div>
             </div>
           </div>

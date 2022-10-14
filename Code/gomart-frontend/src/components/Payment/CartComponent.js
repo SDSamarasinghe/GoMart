@@ -8,7 +8,7 @@ const CartComponent = () => {
     console.log(cartProduct);
     
     const fetchData = async () => {
-        const product = await axios.get("http://localhost:5000/api/customerCart/getAll");
+        const product = await axios.get("http://localhost:8000/api/customerCart/getAll");
         setCartProduct(product.data);
     }
     useEffect(() => {
@@ -17,12 +17,12 @@ const CartComponent = () => {
     }, []);
 
     const increase = async (id) => {
-        await axios.get(`http://localhost:5000/api/customerCart/increase/${id}`);
+        await axios.get(`http://localhost:8000/api/customerCart/increase/${id}`);
         window.location.reload(false);
     }
 
     const decrease = async (id) => {
-        await axios.get(`http://localhost:5000/api/customerCart/decrease/${id}`);
+        await axios.get(`http://localhost:8000/api/customerCart/decrease/${id}`);
         window.location.reload(false);
     }
     
@@ -46,7 +46,7 @@ const CartComponent = () => {
                                 return (
                         <tr>
                         <th scope="row">{id + 1}</th>
-                            <td>{element.productName}</td>
+                            <td>{element.name}</td>
                             <td>{element.price}</td>
                             <td>{element.buyingQty}</td>
                             <td className='d-flex justify-content-between'>

@@ -3,14 +3,14 @@ const asyncHandler = require("express-async-handler");
 
 const addToCart = asyncHandler(async (req, res) => {
     const {
-        productName,
+        name,
         price,
         image,
         buyingQty
     } = req.body;
 
     const newCartProduct = new Cart({
-        productName,
+        name,
         price,
         image,
         buyingQty
@@ -21,7 +21,7 @@ const addToCart = asyncHandler(async (req, res) => {
             res.status(200).send({status: "Product Added To Cart"})
             .json({
                 id: productCart._id,
-                Name: productCart.productName,
+                Name: productCart.name,
                 Price: productCart.price,
                 Image: productCart.image,
                 Qty: productCart.buyingQty
