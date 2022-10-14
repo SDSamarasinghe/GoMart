@@ -19,14 +19,13 @@ const StoreAdminPayments = () => {
     html2canvas(input).then((canvas) => {
       var img = new Image();
       const doc = new jsPDF("p", "mm", "a4");
-      doc.setTextColor(255, 0, 0);
+      doc.setTextColor(20, 30, 39);
       doc.setFontSize(28);
-      doc.setTextColor(0, 0, 255);
+      doc.setTextColor(20, 30, 39);
       doc.setFontSize(16);
-      doc.text(10, 70, "Agrotec LLC");
-      doc.setTextColor(0, 255, 0);
+      doc.text(5, 20, "Agrotec LLC - Reports");
       doc.setFontSize(12);
-      doc.text(145, 85, "Signature :");
+      doc.text(5, 30, "Generated Time :");
       //Date
       var m_names = new Array(
         "January",
@@ -65,13 +64,24 @@ const StoreAdminPayments = () => {
         seconds +
         "sec";
       var newdat = today;
-      doc.setTextColor(0, 0, 0);
+      doc.setTextColor(20, 30, 39);
       doc.setFontSize(11);
-      doc.text(130, 93, newdat);
+      doc.text(5, 35, newdat);
+
+      doc.text(
+        5,
+        50,
+        "Following are the products currently available inside the store"
+      );
+
       var imgHeight = (canvas.height * 200) / canvas.width;
       const imgData = canvas.toDataURL("image/png");
-      doc.addImage(imgData, "JPEG", 5, 100, 200, imgHeight);
+      doc.addImage(imgData, "JPEG", 5, 60, 200, imgHeight);
+      doc.text(5, 200, "_______________");
+      doc.text(5, 205, "Signature");
+
       const date = Date().split(" ");
+
       // we use a date string to generate our filename.
       const dateStr =
         "Agrotec Reports" + date[0] + date[1] + date[2] + date[3] + date[4];
@@ -82,7 +92,7 @@ const StoreAdminPayments = () => {
   return (
     <div className="store-container d-flex justify-content-center p-5">
       <div className="w-100 min-vh-100" id="store-admin-admin456412123">
-        <h3> Store Payment Admin </h3>
+        <h3>Payment Admin Report</h3>
         <p> These are the payments happend inside this month </p>
 
         <div className="d-flex">

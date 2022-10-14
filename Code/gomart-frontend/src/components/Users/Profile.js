@@ -4,8 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 
 
 const Profile = () => {
-  
-  return (
+
+return (
 
     <div class="container mt-5">
     <div class="row d-flex justify-content-center">

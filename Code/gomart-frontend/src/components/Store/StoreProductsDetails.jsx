@@ -18,6 +18,17 @@ const StoreProductsDetails = () => {
       });
   }, [params]);
 
+  const addToCart = async(id) => {
+    const product = {
+        productName : id.productName,
+        price : id.price,
+        buyingQty : quantity
+    }
+
+    await axios.post("http://localhost:5000/api/customerCart/cart", product);
+    alert(`Working ${product.productName}`);
+}
+
   return (
     <div className="mx-vw-100 min-vh-100">
       <div className="latest-store-details-cover position-relative">
@@ -79,6 +90,7 @@ const StoreProductsDetails = () => {
                     >
                       Buy Now
                     </button>
+                    <button className='btn btn-warning' onClick={() => addToCart(product)}>Add to Cart</button>
                   </div>
                 </div>
               </div>
