@@ -36,6 +36,11 @@ const Navigator = () => {
                       </span>{" "}
                     </a>
                     <ul className="dropdown arrow-top">
+                    <li>
+                        <Link to="/profile">
+                          <a>Customer Profile</a>
+                        </Link>
+                      </li>
                       <li>
                         <Link to="/login">
                           <a>Admin Login</a>
@@ -51,7 +56,7 @@ const Navigator = () => {
                           </li>
                           <li>
                             <Link to="/Paylogin">
-                              <a>Store Payments Admin</a>
+                              <a>Payments Admin Report</a>
                             </Link>
                           </li>
                           <li>
@@ -85,7 +90,7 @@ const Navigator = () => {
                     </a>
                   </li>
                   <li>
-                    <a href="contact.html">
+                    <a href="/cart">
                       <span>Cart
                         <img src={cart} alt="" style={{width:"40px"}}/>
                       </span>

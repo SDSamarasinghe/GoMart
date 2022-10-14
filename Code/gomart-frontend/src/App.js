@@ -34,6 +34,7 @@ import Register from "./components/Users/Register";
 import Profile from "./components/Users/Profile";
 
 import ReportGenPage from "./components/Products/ReportGenPage";
+import CartComponent from "./components/Payment/CartComponent";
 
 
 function App() {
@@ -61,6 +62,9 @@ function App() {
             <Route path="/Prodlogin" element={<ProdLogin />} />
             <Route path="/Paylogin" element={<PayLogin />} />
             <Route path="/Orderlogin" element={<OrdLogin />} />
+
+            {/* Payment */}
+            <Route path="/cart" element={<CartComponent />} />
 
              {/* Store Routes */}
         <Route path="/" element={<StoreHome />} />
