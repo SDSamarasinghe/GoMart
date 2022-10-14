@@ -58,7 +58,7 @@ app.use("/api/store", require("./routes/storeRoutes"));
 app.use("api/customer", require("./routes/UserRoutes"));
 
 //cart routes
-app.use("api/cart", require("./routes/cartRoutes"));
+app.use("/api/customerCart", require("./routes/cartRoutes"));
 
 app.listen(PORT, () => {
   logger.info(`Server is running on PORT: ${PORT}`);
