@@ -50,13 +50,21 @@ const AddComplaints  = () => {
           confirmButtonColor: "#12af39",
           className: "store-swal-button",
         }).then(() => {
-          navigate(`/store/products/product/${response.data._id}`);
+          navigate(``);
         });
       });
   };
 
   return (
     <div className="store-add-product py-4 d-flex align-items-center flex-column justify-content-center">
+      <div className=" store-form-outer-layer" style={{width:"1654.250px" ,height:"100px", marginBottom:"20px", padding:"25px" }}>
+        
+        <div  style={{display:"block", }}>
+          <a href="/Message/AddMessage" style={{fontSize:"40px" , color:"black" , paddingRight:"100px" , paddingLeft:"100px", fontWeight:"bolder" , borderBottom:"3px solid #248C78"}}>Leave a Message</a>
+          <a href="/Complaints/AddComplaint" style={{fontSize:"40px" , color:"black" , paddingRight:"100px" , paddingLeft:"100px" , fontWeight:"bolder" }}>Submit a Complaint</a>
+         
+        </div>
+    </div>
       <div className=" store-form-outer-layer">
         <h2 className="display-6"> Are There Any Complaints? </h2>
         <small id="emailHelp" className="form-text text-muted">
