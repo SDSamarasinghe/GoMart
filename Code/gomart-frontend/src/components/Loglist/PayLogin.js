@@ -41,7 +41,7 @@ const Login = () => {
 
   return (
     <div className="container min-vw-100 max-vw-100 vw-100 vh-100 min-vh-100">
-     
+    
       <div className="row  w-100 h-100 d-flex align-items-center justify-content-center">
       
         <div className="col  w-100 h-100 d-flex align-items-center justify-content-center">

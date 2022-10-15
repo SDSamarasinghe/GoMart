@@ -37,10 +37,10 @@ const StoreProducts = () => {
   return (
     <div className="store-container min-vh-100">
       <div className="latest-store-details-cover position-relative">
-        <img src="https://i.ibb.co/rkfrhCm/banner18.webp" alt="" />
+        <img src="https://th.bing.com/th/id/R.aa3dc2136431186b69b832f0cdf0eb8c?rik=2XL15E7zXWQ%2fpg&riu=http%3a%2f%2fweb.tradekorea.com%2fupload_file2%2fmyphoto%2f48%2fC0108348%2fcbe9caa5_966345b2_6e42_4737_a96c_520cd4f0bbb6.jpg&ehk=HQ05K1A5U6H5VxrOVLI9LvwRqQESJDrOK5n2aUZ0nn0%3d&risl=&pid=ImgRaw&r=0" alt="" />
         <div className="store-products-top text-secondary position-absolute top-50 start-50 translate-middle">
           <p>
-            Home > Products >
+           
             {params.category.replace(/\w\S*/g, function (txt) {
               return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
             })}

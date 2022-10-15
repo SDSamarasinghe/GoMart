@@ -33,7 +33,7 @@ const Register = () => {
         user
       );
 
-      if (status === 201) {
+      if (status === 200) {
         navigate("/login");
       }
     } else {
