@@ -9,7 +9,7 @@ const AppUserSchema = new mongoose.Schema({
 
   NICNumber: {
     type: String,
-    required: true
+    // required: true
   },
 
   email: {
@@ -25,7 +25,7 @@ const AppUserSchema = new mongoose.Schema({
 
   Address: {
       type: String,
-      required: true
+      // required: true
   },
 
 },
