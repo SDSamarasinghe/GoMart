@@ -322,7 +322,7 @@ const StoreOrderForm = () => {
 
       <div className="store-bought-product mx-4">
         <div className="store-bought-product-item d-flex">
-          <img src={product?.image} alt="fruit" />
+          <img src={product?.image} alt="Accessories" />
 
           <div className="mx-4">
             <p> {product?.name} </p>

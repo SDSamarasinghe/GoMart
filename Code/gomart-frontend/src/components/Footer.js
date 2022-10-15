@@ -36,7 +36,7 @@ function Footer() {
             </div>
 
             <div className="col-md-5 mb-md-0 mb-3 text-start">
-              <h5 className="text-uppercase font-weight-bold">About</h5>
+              <h5 className="text-uppercase font-weight-bold">Notification</h5>
               <small>
               We regretfully inform you that there will be delays in deliveries due to the ongoing fuel crisis. Outstation areas will experience further delays. Once again sorry for the inconvenience caused.
               </small>
