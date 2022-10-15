@@ -41,11 +41,6 @@ const Navigator = () => {
                           <a>Customer Profile</a>
                         </Link>
                       </li>
-                      <li>
-                        <Link to="/login">
-                          <a>Admin Login</a>
-                        </Link>
-                      </li>
                       <li className="has-children">
                         <Link to="/">Admins</Link>
                         <ul className="dropdown">
