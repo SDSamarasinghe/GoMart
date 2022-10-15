@@ -22,12 +22,14 @@ import StorePaymentScreen from "./components/Store/StorePaymentScreen";
 import StoreAdminProductsEdit from "./components/Store/StoreAdminProductsEdit";
 import StoreAdminProducts from "./components/Store/StoreAdminProducts";
 import StoreAdminOrders from "./components/Store/StoreAdminOrders";
+import StoreEditOrder from "./components/Store/StoreAdminOrders";
 import StoreAdminPayments from "./components/Store/StoreAdminPayments";
 import StoreHome from "./components/Store/StoreHome";
 import StoreProducts from "./components/Store/StoreProducts";
 import StoreProductsDetails from "./components/Store/StoreProductsDetails";
 import StoreOrderForm from "./components/Store/StoreOrderForm";
 import StoreAddProductForm from "./components/Store/StoreAddProductForm";
+// import StoreOrderForm from "./components/Store/StoreOrderForm";
 
 
 import AddFeedback from "./components/Feedbacks/AddFeedback";
@@ -54,6 +56,29 @@ import CartComponent from "./components/Payment/CartComponent";
 import StoreOrderFormCart from "./components/Store/StoreOrderFormCart";
 
 
+/*Order*/
+import Addorder from "./components/order/addorder";
+import Viewdeleteorder from "./components/order/viewdeleteorder";
+import EditOrder from "./components/order/editorder";
+import EditOrder1 from "./components/order/editorder1";
+
+/*shipping*/
+import Addshipping from "./components/shipping/addshipping";
+import Editshipping from "./components/shipping/editshipping";
+import Viewdeleteshipping from "./components/shipping/viewdeleteshipping";
+//import Vieweditshipping from "./components/strore/StoreOrderEdit";
+//import Shipping from "./components/shipping/addshipping1";
+
+/* delivery */
+import Adddelivery from "./components/delivery/adddelivery";         
+import Editdelivery from "./components/delivery/editdelivery"; 
+import Viewdeletedelivery from "./components/delivery/viewdeletedelivery"; 
+
+import Adddelivery1 from "./components/delivery/Adddel";   
+import ViewDelivery from "./components/delivery/viewdel";   
+
+
+
 function App() {
   return (
     <div className="App">
@@ -74,6 +99,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/sign-up" element={<Register />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/profile" element={<Profile />} />
 
             {/* Loglist */}
             <Route path="/Prodlogin" element={<ProdLogin />} />
@@ -86,6 +112,7 @@ function App() {
 
              {/* Store Routes */}
         <Route path="/" element={<StoreHome />} />
+        <Route path="/edit" element={<StoreEditOrder />} />
         <Route path="/store/products/:category" element={<StoreProducts />} />
         <Route
           path="/store/products/product/:id"
@@ -124,6 +151,29 @@ function App() {
             <Route path="/Product/report" element={<ReportGenPage />} />
 
 
+            {/* Order */}
+           <Route path="/order/addorder" element={<Addorder />} />
+          <Route path="/order/viewdeleteorder" element={< Viewdeleteorder />}/>
+          <Route path="/order/editorder/:id" element={<EditOrder />} />
+          <Route path="/order/editorder" element={<EditOrder />} />
+          <Route path="/order/editorder1" element={<EditOrder1 />} />
+
+          {/* Shipping */}
+          <Route path="/shipping/addshipping" element={<Addshipping />}/>
+          <Route path="/shipping/editshipping" element={<Editshipping />}/>
+          <Route path="/shipping/viewdeleteshipping" element={< Viewdeleteshipping />}/>
+          
+
+
+          {/* delivery */}
+          <Route path="/delivery/adddelivery" element={<Adddelivery />}></Route>           
+          <Route path="/delivery/editdelivery" element={<Editdelivery />}></Route> 
+          <Route path="/delivery/viewdeletedelivery" element={<Viewdeletedelivery />}/>
+
+          <Route path="/delivery/Adddel" element={<Adddelivery1 />}></Route>
+          <Route path="/delivery/viewdel" element={<ViewDelivery />}></Route>
+
+
              {/*Feedbacks*/}
         <Route path="/Feedbacks/AddFeedback" element={<AddFeedback />} />
         <Route path="/Feedbacks/AdminFeedbackView" element={<AdminFeedbackView />} />
@@ -145,9 +195,8 @@ function App() {
         <Route path="/Message/EditMessage/:id" element={<EditMessage />} />
 
           </Routes>
-        <Footer/>
-      </BrowserRouter>
-    </div>
+          </BrowserRouter>
+          </div>
   );
 }
 

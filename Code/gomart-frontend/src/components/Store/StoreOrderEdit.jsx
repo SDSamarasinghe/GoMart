@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 
-const StoreOrderForm = () => {
+const StoreOrderEdit = () => {
   const { product: paramsProduct, quantity, price } = useParams();
   const [subTotal, setSubTotal] = useState("");
   const [delivery, setDelivery] = useState("");
@@ -153,13 +153,13 @@ const StoreOrderForm = () => {
 
   const demo = () => {
     setOrder({
-      firstName: "Kushan",
-      lastName: "Rajapaksha",
-      address1: "25/5 , Kandana Lane,",
-      address2: "Batagama",
-      city: "Kandana",
-      state: "Western",
-      zipCode: "11471",
+      firstName: "Pasindu",
+      lastName: "Prabhashitha",
+      address1: "45/5",
+      address2: "Mountain View",
+      city: "California",
+      state: "USA",
+      zipCode: "11481",
       product: "625ebd8857dfb813960dbb1e",
       quantity: "1",
       total: "2.13",
@@ -266,7 +266,7 @@ const StoreOrderForm = () => {
           </div>
           <div class="col-md-4">
             <label for="inputState" class="form-label">
-              Province
+              State
             </label>
             <input
               type="text"
@@ -278,7 +278,7 @@ const StoreOrderForm = () => {
               onChange={onFormChange}
               id="inputCity"
             />
-            <div class="invalid-feedback">Please enter a valid Province.</div>
+            <div class="invalid-feedback">Please enter a valid state.</div>
           </div>
 
           <div class="col-md-2">
@@ -297,10 +297,6 @@ const StoreOrderForm = () => {
             />
             <div class="invalid-feedback">Please enter a valid zip code.</div>
           </div>
-
-
-
-
           <div class="col-12"></div>
           <div class="col-12">
             <button
@@ -326,7 +322,7 @@ const StoreOrderForm = () => {
 
       <div className="store-bought-product mx-4">
         <div className="store-bought-product-item d-flex">
-          <img src={product?.image} alt="Accessories" />
+          <img src={product?.image} alt="fruit" />
 
           <div className="mx-4">
             <p> {product?.name} </p>
@@ -365,4 +361,4 @@ const StoreOrderForm = () => {
   );
 };
 
-export default StoreOrderForm;
+export default StoreOrderEdit;

@@ -98,6 +98,14 @@ const Navigator = () => {
                       </span>
                     </a>
                   </li>
+
+                  <li>
+                  <a href="/delivery/Adddel">
+                      <span>Delivery</span>
+                    </a>
+                    
+                  </li>
+
                 </ul>
               </nav>
             </div>

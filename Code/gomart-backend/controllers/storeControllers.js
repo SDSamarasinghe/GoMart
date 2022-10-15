@@ -1,6 +1,7 @@
 const Product = require("../models/ProductModel");
 const StorePayment = require("../models/StorePaymentModel");
 const StoreOrder = require("../models/Store_OrderModel");
+const Delivery = require("../models/delivery");
 
 const fetchAllProducts = (req, res) => {
   Product.find({}, (err, docs) => {
@@ -72,6 +73,14 @@ const createOrder = (req, res) => {
   });
 };
 
+const deleteOrder = (req, res) => {
+  StoreOrder.deleteOne({ _id: req.params.oid }, (err) => {
+    if (err) res.status(500).json({ error: err });
+
+    res.status(204).json({ status: "Shipping Details deleted!" });
+  });
+};
+
 const getOrders = (req, res) => {
   StoreOrder.find({}, (err, docs) => {
     if (!err) {
@@ -92,6 +101,12 @@ const getSingleOrder = (req, res) => {
   });
 };
 
+const createDelivey = (req, res) => {
+  Delivery.create(req.body, (err, data) => {
+    if (err) res.status(500).json({ error: err });
+    res.status(201).json(data);
+  });
+};
 const createPayment = (req, res) => {
   StorePayment.create(req.body, (err, data) => {
     if (err) res.status(500).json({ error: err });
@@ -118,8 +133,10 @@ module.exports = {
   getSingleItem,
   updateProduct,
   createOrder,
+  deleteOrder,
   createPayment,
   getSingleOrder,
   getOrders,
   getPayments,
+  createDelivey
 };
