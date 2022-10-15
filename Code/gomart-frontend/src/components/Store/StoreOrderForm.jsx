@@ -153,13 +153,13 @@ const StoreOrderForm = () => {
 
   const demo = () => {
     setOrder({
-      firstName: "Pasindu",
-      lastName: "Prabhashitha",
-      address1: "45/5",
-      address2: "Mountain View",
-      city: "California",
-      state: "USA",
-      zipCode: "11481",
+      firstName: "Kushan",
+      lastName: "Rajapaksha",
+      address1: "25/5 , Kandana Lane,",
+      address2: "Batagama",
+      city: "Kandana",
+      state: "Western",
+      zipCode: "11471",
       product: "625ebd8857dfb813960dbb1e",
       quantity: "1",
       total: "2.13",
@@ -266,7 +266,7 @@ const StoreOrderForm = () => {
           </div>
           <div class="col-md-4">
             <label for="inputState" class="form-label">
-              State
+              Province
             </label>
             <input
               type="text"
@@ -278,7 +278,7 @@ const StoreOrderForm = () => {
               onChange={onFormChange}
               id="inputCity"
             />
-            <div class="invalid-feedback">Please enter a valid state.</div>
+            <div class="invalid-feedback">Please enter a valid Province.</div>
           </div>
 
           <div class="col-md-2">
@@ -297,6 +297,10 @@ const StoreOrderForm = () => {
             />
             <div class="invalid-feedback">Please enter a valid zip code.</div>
           </div>
+
+
+
+
           <div class="col-12"></div>
           <div class="col-12">
             <button

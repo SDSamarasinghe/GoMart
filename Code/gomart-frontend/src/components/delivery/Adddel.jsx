@@ -90,16 +90,16 @@ const Adddelivery  = () => {
 
   const demo = () => {
     setDelvery({
-      driver_Name: "Pasindu Dissanayaka",
-      Receviver_Name: "Kavindu Subashana",
+      driver_Name: "Sumudu jayakody",
+      Receviver_Name: "Omindu Sanvida",
       delivery_date: "45/5",
       delivery_time: "Mountain View",
-      delivery_status: "California",
-      Receviver_phoneNo: "USA",
-      delivery_details: "11481",
-      special_Notice: "625ebd8857dfb813960dbb1e",
+      delivery_status: "Local",
+      Receviver_phoneNo: "0767659394",
+      delivery_details: "Keep security ",
+      special_Notice: "Make delivery on time",
       Date: "1",
-      signature: "2.13",
+      signature: "Sumudu.pdf",
     });
   };
 
@@ -227,15 +227,22 @@ const Adddelivery  = () => {
             </div>
 
             <div className="form-group my-4">
-              <label className="my-1">Signature</label>
-              <textarea
-              input="signature"
+
+              <label className="my-1">Upload your signature as files or images:</label>
+              <input
+                type="file"
                 className="form-control"
-                placeholder="Signature"
-                value={delivery.signature}
-                onChange={onFormChange}
+                value={signature}
+                onChange={(e) => {
+                  setsignature(e.target.value);
+
+                }}
+
               />
+
             </div>
+
+          
 
 
 

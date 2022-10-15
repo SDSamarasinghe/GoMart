@@ -93,7 +93,7 @@ const Navigator = () => {
                   </li>
 
                   <li>
-                  <a href="contact.html">
+                  <a href="/delivery/Adddel">
                       <span>Delivery</span>
                     </a>
                     

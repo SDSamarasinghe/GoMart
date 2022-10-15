@@ -179,14 +179,14 @@ const AdmindeliveryView = () => {
                     <td>{delivery[index].Date}</td>
                     <td>{delivery[index].signature}</td>
                     <td style={{ width: "300px" }}>
-                      <Link to={`/store/store-admin-products/edit/${msg._id}`}>
+                      {/* <Link to={`/store/store-admin-products/edit/${msg._id}`}>
                         <button
                           type="button"
                           class="btn btn-outline-warning mx-2"
                         >
                           Edit <i class="fa-solid fa-pen-to-square"></i>
                         </button>
-                      </Link>
+                      </Link> */}
 
                       <button
                         onClick={() => deletedelivery(msg._id)}
