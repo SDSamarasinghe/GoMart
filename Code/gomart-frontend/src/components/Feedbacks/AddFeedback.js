@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Feedbacks.css";
 import swal from "sweetalert";
+import Feedback from "react-bootstrap/esm/Feedback";
 
 const FeedbacksForm = () => {
   const [listOfFeedbacks, setListOfFeedbacks] = useState([]);
@@ -501,11 +502,10 @@ const FeedbacksForm = () => {
                 type="button"
                 onClick={demo}
                 class="btn store-order-form-button my-4"
-                style={{float:"left" }}
-
-              >
-                Demo
-              </button>
+                id="product-details-buy-now"
+                >
+                 Demo
+                </button>
             </div>
           </center>
         </div>
@@ -518,12 +518,12 @@ const FeedbacksForm = () => {
           border: "3px solid #FFFFFF",
         }}
       >
-        {/* <img
+        <img
           width="400"
           height="400"
           style={{marginTop:"170px",marginRight:"140px"}}
-          src={product}
-        /> */}
+          src={Feedback}
+        />
       </div>
     </div>
   );
