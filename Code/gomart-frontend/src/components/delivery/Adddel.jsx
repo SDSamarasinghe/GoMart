@@ -63,6 +63,7 @@ const Adddelivery  = () => {
         // delivery.delivery_details.length <= 0 ||
         // delivery.special_Notice.length <= 0 ||
         // delivery.Date.length <= 0 ||
+        
         delivery.signature.length <= 0 
 
     )
