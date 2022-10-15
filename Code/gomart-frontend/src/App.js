@@ -31,29 +31,11 @@ import StoreOrderForm from "./components/Store/StoreOrderForm";
 import StoreAddProductForm from "./components/Store/StoreAddProductForm";
 // import StoreOrderForm from "./components/Store/StoreOrderForm";
 
-
-import AddFeedback from "./components/Feedbacks/AddFeedback";
-import AdminFeedbackView from "./components/Feedbacks/AdminFeedbackView";
-import FeedbackView from "./components/Feedbacks/FeedbackView";
-import EditFeedback from "./components/Feedbacks/EditFeedback";
-import AdminEditFeedback from "./components/Feedbacks/AdminEditFeedback";
-import EditFeedbackNew from "./components/Feedbacks/EditFeedbackNew";
-import AddComplaint from "./components/Complaints/AddComplaint";
-import AdminComplaintView from "./components/Complaints/AdminComplaintView";
-import ComplaintView from "./components/Complaints/ComplaintView";
-import EditComplaint from "./components/Complaints/EditComplaint";
-import AdminEditComplaint from "./components/Complaints/AdminEditComplaint";
-import AddMessage from "./components/Message/AddMessage";
-import AdminMessagesView from "./components/Message/AdminMessagesView";
-import EditMessage from "./components/Message/EditMessage";
-
 import Login from "./components/Users/Login";
 import Register from "./components/Users/Register";
 import Profile from "./components/Users/Profile";
 
 import ReportGenPage from "./components/Products/ReportGenPage";
-import CartComponent from "./components/Payment/CartComponent";
-import StoreOrderFormCart from "./components/Store/StoreOrderFormCart";
 
 
 /*Order*/
@@ -66,7 +48,6 @@ import EditOrder1 from "./components/order/editorder1";
 import Addshipping from "./components/shipping/addshipping";
 import Editshipping from "./components/shipping/editshipping";
 import Viewdeleteshipping from "./components/shipping/viewdeleteshipping";
-//import Vieweditshipping from "./components/strore/StoreOrderEdit";
 //import Shipping from "./components/shipping/addshipping1";
 
 /* delivery */
@@ -105,10 +86,6 @@ function App() {
             <Route path="/Prodlogin" element={<ProdLogin />} />
             <Route path="/Paylogin" element={<PayLogin />} />
             <Route path="/Orderlogin" element={<OrdLogin />} />
-
-            {/* Payment */}
-            <Route path="/cart" element={<CartComponent />} />
-            <Route path="/cartPay" element={<StoreOrderFormCart />} />
 
              {/* Store Routes */}
         <Route path="/" element={<StoreHome />} />
@@ -150,7 +127,6 @@ function App() {
 
             <Route path="/Product/report" element={<ReportGenPage />} />
 
-
             {/* Order */}
            <Route path="/order/addorder" element={<Addorder />} />
           <Route path="/order/viewdeleteorder" element={< Viewdeleteorder />}/>
@@ -159,44 +135,23 @@ function App() {
           <Route path="/order/editorder1" element={<EditOrder1 />} />
 
           {/* Shipping */}
-          <Route path="/shipping/addshipping" element={<Addshipping />}/>
+          <Route path="/shipping/addshipping" element={<Addshipping />}></Route> 
           <Route path="/shipping/editshipping" element={<Editshipping />}/>
           <Route path="/shipping/viewdeleteshipping" element={< Viewdeleteshipping />}/>
-          
-
 
           {/* delivery */}
           <Route path="/delivery/adddelivery" element={<Adddelivery />}></Route>           
           <Route path="/delivery/editdelivery" element={<Editdelivery />}></Route> 
-          <Route path="/delivery/viewdeletedelivery" element={<Viewdeletedelivery />}/>
+          <Route path="/delivery/viewdeletedelivery" element={<Viewdeletedelivery />}></Route> /
 
           <Route path="/delivery/Adddel" element={<Adddelivery1 />}></Route>
           <Route path="/delivery/viewdel" element={<ViewDelivery />}></Route>
 
 
-             {/*Feedbacks*/}
-        <Route path="/Feedbacks/AddFeedback" element={<AddFeedback />} />
-        <Route path="/Feedbacks/AdminFeedbackView" element={<AdminFeedbackView />} />
-        <Route path="/Feedbacks/FeedbackView" element={<FeedbackView />} />
-        <Route path="/Feedbacks/EditFeedback/:id/:fname/:lname/:date/:email/:pro_qua_fb/:deli_dri_rate/:deli_tme_rate/:recommendation/:suggestions" element={<EditFeedback />} />
-        <Route path="/Feedbacks/AdminEditFeedback/:id/:fname/:lname/:date/:email/:pro_qua_fb/:deli_dri_rate/:deli_tme_rate/:recommendation/:suggestions" element={<AdminEditFeedback />} />
-        <Route path="/Feedbacks/EditFeedbackNew/:id" element={<EditFeedbackNew />} />
-
-        {/* Complaints */}
-        <Route path="/Complaints/AddComplaint" element={<AddComplaint />} />
-        <Route path="/Complaints/AdminComplaintView" element={<AdminComplaintView />} />
-        <Route path="/Complaints/ComplaintView" element={<ComplaintView />} />
-        <Route path="/Complaints/EditComplaint/:id/:fname/:lname/:date/:email/:pro_qua_fb/:deli_dri_rate/:deli_tme_rate/:recommendation/:suggestions" element={<EditComplaint />} />
-        <Route path="/Complaints/AdminEditComplaint/:id/:fname/:lname/:date/:email/:pro_qua_fb/:deli_dri_rate/:deli_tme_rate/:recommendation/:suggestions" element={<AdminEditComplaint />} />
-        
-        {/*Message */}
-        <Route path="/Message/AddMessage" element={<AddMessage />} />
-        <Route path="/Message/AdminMessagesView" element={<AdminMessagesView />} />
-        <Route path="/Message/EditMessage/:id" element={<EditMessage />} />
-
           </Routes>
-          </BrowserRouter>
-          </div>
+        <Footer/>
+      </BrowserRouter>
+    </div>
   );
 }
 
