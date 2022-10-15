@@ -5,15 +5,8 @@ const {
   createDelivey,
   fetchProductsByCategory,
   getSingleItem,
-  deleteProduct,
-  updateProduct,
-  createOrder,
-  createPayment,
-  getSingleOrder,
-  getOrders,
-  deleteOrder,
-  getPayments,
-} = require("../controllers/storeControllers");
+  
+} = require("../controllers/deliveryControllers");
 
 const router = express.Router();
 
@@ -22,11 +15,7 @@ router.post("/products", createProduct);
 router.get("/products/:category", fetchProductsByCategory);
 router.put("/products/:pid", updateProduct);
 router.delete("/products/:pid", deleteProduct);
-router.get("/product/:pid", getSingleItem);
-router.post("/orders", createOrder);
-router.get("/orders", getOrders);
-router.get("/order/:id", getSingleOrder);
-router.delete("/orders/:oid", deleteOrder);
+
 
 router.post("/delivery", createDelivey);
 

@@ -198,7 +198,7 @@ const printPdf = () => {
                                 <td>{adr.instruction}</td>
                                 <td>
                                     <Link to={{ 
-                                    pathname: "/crew/edit/"+adr._id, 
+                                    pathname: "/shipping/editshipping/"+adr._id, 
                                     param1: "Par1" 
                                     }}  className='btn btn-warning text-nowrap' >
                                         

@@ -10,7 +10,7 @@ const router = express.Router();
 
 //Save delivery details
 
-router.post('/post/save',(req,res)=>{
+router.post('/save',(req,res)=>{
 
     let newdelivery = new delivery(req.body);
     
@@ -53,7 +53,7 @@ router.get('/get/:id', (req,res) => {
 
     let delivery_date= req.params.id;
 
-    Order.findById(delivery_date,(err,delivery) =>{
+    delivery.findById(delivery_date,(err,delivery) =>{
         if(err){
             return res.status(400).json({success:false, err});
         }
@@ -70,7 +70,7 @@ router.get('/get/:id', (req,res) => {
 
 router.put('/update/:id', (req,res)=>{
 
-    deliverys.findByIdAndUpdate(
+    delivery.findByIdAndUpdate(
         req.params.id, {
             $set: req.body
         },
@@ -92,7 +92,7 @@ router.put('/update/:id', (req,res)=>{
 
 router.delete('/delete/:id', (req,res)=>{
 
-    deliverys.findByIdAndRemove(req.params.id).exec((err, deleteddelivery)=>{
+    delivery.findByIdAndRemove(req.params.id).exec((err, deleteddelivery)=>{
         if (err) {
             return res.status(400).json({
                 message: "Delete Unsuccessful.",

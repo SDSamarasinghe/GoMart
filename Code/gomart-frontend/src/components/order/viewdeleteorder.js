@@ -132,6 +132,47 @@ const printPdf = () => {
     });
   };
 
+
+
+
+//   //SEARCH
+
+//   handleSearchArea =(e)=>{
+//     const searchKey = e.target.value;
+//     axios.get("http://localhost:8000/order/getall").then( res=>{
+//         if(res.data.success){    
+//             this.filterData(res.data.existingcrews,searchKey); 
+//         }
+//     });
+// }
+// filterData(order,searchKey) ;{
+//   const result = order.filter(
+//     (order)=>
+//   order.OrderID.toLowerCase().includes(searchKey)||
+//   order.OrderDate.toLowerCase().includes(searchKey)
+//   );
+   
+//     this.setState({order:result});         
+// }
+
+
+// //data filter by Contract id
+// filter =(conid)=>{
+//     // const searchKey = e.target.value;
+//     axios.get("http://localhost:8000/order/getall").then( res=>{
+//         if(res.data.success){
+            
+//             this.filterData(res.data.existingcrews,conid);
+            
+
+          
+//         }
+//     });
+// }
+
+
+
+
   return (
     
     <div className="col-md-8 mt-4 mx-auto" style={{marginBottom:"20px"}}>

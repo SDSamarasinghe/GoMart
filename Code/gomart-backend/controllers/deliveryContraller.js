@@ -38,7 +38,12 @@ const adddelivery = (req, res) => {
       console.log(err);
     });
 };
-
+const createDelivey = (req, res) => {
+  delivery.create(req.body, (err, data) => {
+    if (err) res.status(500).json({ error: err });
+    res.status(201).json(data);
+  });
+};
 const getdelivery = async (req, res) => {
   try {
     const delivery = await delivery.find();
@@ -58,7 +63,7 @@ const getsingledelivery = async (req, res) => {
   }
 };
 
-const updatedelivery = async (req, res) => {
+const updateDelivery = async (req, res) => {
   const deliveryID = req.params.id;
   try {
     const id = await delivery.findById(deliveryID);
@@ -122,6 +127,8 @@ module.exports = {
   adddelivery,
   getdelivery,
   getsingledelivery,
+ 
+  createDelivey,
   updatedelivery,
   removesdelivery,
 };

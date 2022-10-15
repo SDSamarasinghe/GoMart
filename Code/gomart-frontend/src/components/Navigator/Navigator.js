@@ -91,6 +91,14 @@ const Navigator = () => {
                       </span>
                     </a>
                   </li>
+
+                  <li>
+                  <a href="contact.html">
+                      <span>Delivery</span>
+                    </a>
+                    
+                  </li>
+
                 </ul>
               </nav>
             </div>

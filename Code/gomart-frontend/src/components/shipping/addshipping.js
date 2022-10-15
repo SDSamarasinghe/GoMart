@@ -38,7 +38,7 @@ const Shipping = () => {
     }
 
     if (!Receviver_phoneNo) {
-      errors.Receviver_phoneNo = "Receviver_phoneNo is required!";
+      errors.Receviver_phoneNo = "Receviver phoneNo is required!";
     }
 
     if (!conformation) {
@@ -155,13 +155,19 @@ const Shipping = () => {
     });
   };
 
+  
+
  return (
+
+  
     <div style =  {{ width: "1150px" }}>
       <div
+      
         className="col-md-8 mt-4 mx-auto"
         style=  {{
           marginBottom: "40px",
           marginTop: "200px",
+          //marginRight:"2000px",
           border: "2px solid #078282",
         }}
       >
@@ -175,6 +181,8 @@ const Shipping = () => {
             borderRadius: "30px",
             paddingBottom: "10px",
             margin: "2px",
+            margin: "auto",
+            
           }}
         >
           <center>
@@ -244,7 +252,7 @@ const Shipping = () => {
                 id="formGroupExampleInput2"
                 placeholder="Receviver phone Number"
                 required
-                value={Receviver_phoneNo}
+                value={Receviver_Address}
                 style={{ color: "rgba(0, 0, 0, 0.7)" }}
                 onChange={(e) => {
                   setReceviver_phoneNo(e.target.value);

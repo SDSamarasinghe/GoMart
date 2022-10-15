@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "./Store.css";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
+import swal from "sweetalert";
 
 const StoreAdminOrders = () => {
   const [orders, setOrders] = useState([]);
@@ -14,6 +15,12 @@ const StoreAdminOrders = () => {
     });
   }, []);
 
+  const refresh = () => {
+    axios.get(`http://localhost:8000/api/store/orders`).then((res) => {
+      setOrders(res.data.orders);
+      
+    });
+  }
   const printPdf = () => {
     const input = document.querySelector(".pdfdiv");
     html2canvas(input).then((canvas) => {
@@ -78,6 +85,31 @@ const StoreAdminOrders = () => {
       doc.save(`report_${dateStr}.pdf`);
     });
   };
+  const deleteOrder = (id) => {
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover this product!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        axios
+          .delete(`http://localhost:8000/api/store/orders/${id}`)
+          .then(() => {
+            swal("Product Deleted Successfully!", {
+              icon: "success",
+            });
+
+            axios
+              .get(`http://localhost:8000/api/store/orders`)
+              .then((res) => {
+                setOrders(res.data.orders);
+              });
+          });
+      }
+    });
+  };
 
   return (
     <div className="store-container d-flex justify-content-center p-5">
@@ -98,9 +130,17 @@ const StoreAdminOrders = () => {
           <thead className="store-admin-table-header">
             <tr>
               <th scope="col">Order ID</th>
-              <th scope="col">Customer Name</th>
-              <th scope="col">Amount</th>
+              <th scope="col">Full Name</th>
+              <th scope="col">Adress 1</th>
+              <th scope="col">Adress 2</th>
+              <th scope="col">City</th>
+              <th scope="col">Zip Code</th>
+              <th scope="col">Product</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Total</th>
               <th scope="col">Date</th>
+            
+   
             </tr>
           </thead>
           <tbody>
@@ -113,8 +153,29 @@ const StoreAdminOrders = () => {
                   <td>
                     {order.firstName} {order.lastName}
                   </td>
+                  <td> {order.address1}</td>
+                  <td> {order.address2}</td>
+                  <td> {order.city}</td>
+                  <td> {order.zipCode}</td>
+                  <td> {order.product}</td>
+                  <td> {order.quantity}</td>
                   <td>$ {order.total}</td>
                   <td style={{ width: "300px" }}>{order.createdAt}</td>
+                  <td>
+                                    <Link to={{ 
+                                    pathname: "/shipping/editshipping/"+order._id, 
+                                    param1: "Par1" 
+                                    }}  className='btn btn-warning text-nowrap' >
+                                        
+                                        <i className='fas fa-edit '></i>&nbsp; Edit
+                                    </Link>
+                                
+                                    &nbsp;
+                                    </td><td>
+                                    <button className='btn btn-danger text-nowrap'  href="#" onClick={()=>{deleteOrder(order._id);}}>
+                                        <i className='far fa-trash-alt'></i>&nbsp; Delete
+                                    </button>
+                                </td>
                 </tr>
               ))}
           </tbody>
