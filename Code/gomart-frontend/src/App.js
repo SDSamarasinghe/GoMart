@@ -22,12 +22,14 @@ import StorePaymentScreen from "./components/Store/StorePaymentScreen";
 import StoreAdminProductsEdit from "./components/Store/StoreAdminProductsEdit";
 import StoreAdminProducts from "./components/Store/StoreAdminProducts";
 import StoreAdminOrders from "./components/Store/StoreAdminOrders";
+import StoreEditOrder from "./components/Store/StoreAdminOrders";
 import StoreAdminPayments from "./components/Store/StoreAdminPayments";
 import StoreHome from "./components/Store/StoreHome";
 import StoreProducts from "./components/Store/StoreProducts";
 import StoreProductsDetails from "./components/Store/StoreProductsDetails";
 import StoreOrderForm from "./components/Store/StoreOrderForm";
 import StoreAddProductForm from "./components/Store/StoreAddProductForm";
+// import StoreOrderForm from "./components/Store/StoreOrderForm";
 
 import Login from "./components/Users/Login";
 import Register from "./components/Users/Register";
@@ -46,11 +48,16 @@ import EditOrder1 from "./components/order/editorder1";
 import Addshipping from "./components/shipping/addshipping";
 import Editshipping from "./components/shipping/editshipping";
 import Viewdeleteshipping from "./components/shipping/viewdeleteshipping";
+//import Vieweditshipping from "./components/strore/StoreOrderEdit";
+//import Shipping from "./components/shipping/addshipping1";
 
 /* delivery */
 import Adddelivery from "./components/delivery/adddelivery";         
 import Editdelivery from "./components/delivery/editdelivery"; 
 import Viewdeletedelivery from "./components/delivery/viewdeletedelivery"; 
+
+import Adddelivery1 from "./components/delivery/Adddel";   
+import ViewDelivery from "./components/delivery/viewdel";   
 
 
 
@@ -74,6 +81,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/sign-up" element={<Register />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/profile" element={<Profile />} />
 
             {/* Loglist */}
             <Route path="/Prodlogin" element={<ProdLogin />} />
@@ -82,6 +90,7 @@ function App() {
 
              {/* Store Routes */}
         <Route path="/" element={<StoreHome />} />
+        <Route path="/edit" element={<StoreEditOrder />} />
         <Route path="/store/products/:category" element={<StoreProducts />} />
         <Route
           path="/store/products/product/:id"
@@ -130,11 +139,15 @@ function App() {
           <Route path="/shipping/addshipping" element={<Addshipping />}></Route> 
           <Route path="/shipping/editshipping" element={<Editshipping />}/>
           <Route path="/shipping/viewdeleteshipping" element={< Viewdeleteshipping />}/>
+          {/* <Route path="/strore/StoreOrderEdit" element={< Vieweditshipping />}/> */}
 
           {/* delivery */}
           <Route path="/delivery/adddelivery" element={<Adddelivery />}></Route>           
           <Route path="/delivery/editdelivery" element={<Editdelivery />}></Route> 
           <Route path="/delivery/viewdeletedelivery" element={<Viewdeletedelivery />}></Route> /
+
+          <Route path="/delivery/Adddel" element={<Adddelivery1 />}></Route>
+          <Route path="/delivery/Adddel" element={<ViewDelivery />}></Route>
 
 
           </Routes>
