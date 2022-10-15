@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 
-const StoreOrderForm = () => {
+const StoreOrderFormCart = () => {
   const { product: paramsProduct, quantity, price } = useParams();
   const [subTotal, setSubTotal] = useState("");
   const [delivery, setDelivery] = useState("");
@@ -26,6 +26,41 @@ const StoreOrderForm = () => {
     total: "",
     user: "",
   });
+
+  // edit code - start
+
+  const [cartProduct, setCartProduct] = useState([]);
+    // console.log(cartProduct);
+    const [totPrice, setTotPrice] = useState("");
+    
+    const fetchData = async () => {
+        const product = await axios.get("http://localhost:5000/api/customerCart/getAll");
+        setCartProduct(product.data);
+    }
+
+    const totalPrice = async () => {
+        
+        await axios.get("http://localhost:5000/api/customerCart/tot")
+        .then(({ data }) => {
+            var sum = 0;
+            if(typeof data == 'object'){
+                data.forEach(funds => {
+                    sum += parseFloat(funds);
+                });
+            }
+                setTotPrice(sum);
+        })
+        .catch(err => {});
+    }
+
+    useEffect(() => {
+      fetchData();
+      // console.log(cartProduct);
+      totalPrice();
+  }, []);
+
+    // edit code -end
+
 
   useEffect(() => {
     const subTotal = Number(quantity) * Number(price);
@@ -153,8 +188,8 @@ const StoreOrderForm = () => {
 
   const demo = () => {
     setOrder({
-      firstName: "Pasindu",
-      lastName: "Prabhashitha",
+      firstName: "Ravindu",
+      lastName: "Prabashwar",
       address1: "45/5",
       address2: "Mountain View",
       city: "California",
@@ -322,6 +357,47 @@ const StoreOrderForm = () => {
 
       <div className="store-bought-product mx-4">
         <div className="store-bought-product-item d-flex">
+        <table class="table">
+                    {/* <thead>
+                        <tr className='table-dark'>
+                        <th scope="col">id</th>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Unit Price(Rs.)</th>
+                        <th scope="col">Quentity</th>
+                        <th scope="col">Product Total Price</th>
+                        </tr>
+                    </thead> */}
+                    <tbody>
+                    {/* {
+                            cartProduct.map((element, id) => {
+                                return (
+                        <tr>
+                        <th scope="row">{id + 1}</th>
+                            <td>{element.productName}</td>
+                            <td>{element.price}</td>
+                            <td>{element.buyingQty}</td>
+                            <td>{element.buyingQty * element.price}</td>
+                        </tr>
+                                )
+                            })
+                        } */}
+
+                          {
+                            cartProduct.map((element, id) => {
+                                return (
+                        <tr>
+                        <th scope="row">{id + 1}</th>
+                            <td>{element.productName}</td>
+                            <td>{element.price}</td>
+                            <td>{element.buyingQty}</td>
+                            <td>{element.buyingQty * element.price}</td>
+                        </tr>
+                                )
+                            })
+                        } 
+
+                    </tbody>
+                </table>
           <img src={product?.image} alt="fruit" />
 
           <div className="mx-4">
@@ -361,4 +437,4 @@ const StoreOrderForm = () => {
   );
 };
 
-export default StoreOrderForm;
+export default StoreOrderFormCart;

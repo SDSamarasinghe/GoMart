@@ -35,6 +35,7 @@ import Profile from "./components/Users/Profile";
 
 import ReportGenPage from "./components/Products/ReportGenPage";
 import CartComponent from "./components/Payment/CartComponent";
+import StoreOrderFormCart from "./components/Store/StoreOrderFormCart";
 
 
 function App() {
@@ -65,6 +66,7 @@ function App() {
 
             {/* Payment */}
             <Route path="/cart" element={<CartComponent />} />
+            <Route path="/cartPay" element={<StoreOrderFormCart />} />
 
              {/* Store Routes */}
         <Route path="/" element={<StoreHome />} />
