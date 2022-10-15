@@ -21,6 +21,7 @@
     "mongoose": "^6.5.4",
     "node": "^16.17.0",
     "nodemon": "^2.0.19",
-    "pino": "^8.4.2"
+    "pino": "^8.4.2",
+    "react-bootstrap": "^2.5.0"
   }
 }

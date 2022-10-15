@@ -1,15 +1,17 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
 
-const Login = () => {
+const Login = ({history}) => {
   const [password, setPassword] = useState();
   const [email, setEmail] = useState();
   const [error, setError] = useState(null);
   const [waiting, setWaiting] = useState(false);
 
   const navigate = useNavigate();
-
+  const userInfo = [];
   const onLogin = async (e) => {
     setWaiting(!waiting);
     e.preventDefault();
@@ -24,6 +26,12 @@ const Login = () => {
         withCredentials: true,
       })
       .then((res) => {
+        console.log(res);
+        let data = JSON.stringify(res);
+  
+        userInfo.push(data);
+        localStorage.setItem('data', userInfo);
+        
         setWaiting(!waiting);
         navigate("/");
         return;
@@ -41,7 +49,7 @@ const Login = () => {
 
   return (
     <div className="container min-vw-100 max-vw-100 vw-100 vh-100 min-vh-100">
-     
+    
       <div className="row  w-100 h-100 d-flex align-items-center justify-content-center">
       
         <div className="col  w-100 h-100 d-flex align-items-center justify-content-center">
