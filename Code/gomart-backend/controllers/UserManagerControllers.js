@@ -44,8 +44,54 @@ const currentUser = (req, res) => {
   }
 };
 
+//update user
+const updateUser = async (req, res) => {
+
+  let UserId = req.params.id;
+
+  const {
+      FirstName,
+      LastName,
+      NICNumber,
+      email,
+      password,
+      Address
+  } = req.body;
+
+  const updateUser = {
+      FirstName,
+      LastName,
+      NICNumber,
+      email,
+      password,
+      Address
+  }
+
+  const update = await User.findByIdAndUpdate(UserId, updateUser)
+      .then((update) => {
+          res.status(200).send({status: "Customer Updated", update});
+      }).catch((err) => {
+          console.log(err);
+      })
+}
+
+//delete customer
+const deleteUser = (req, res) => {
+
+  let UserId = req.params.id;
+
+  User.findByIdAndDelete(UserId)
+      .then(() => {
+          res.status(200).send({status: "Successfully Deleted"});
+      }).catch((err) => {
+          console.log(err);
+      })
+}
+
 module.exports = {
   registerUser,
   loginUser,
   currentUser,
+  updateUser,
+  deleteUser,
 };
