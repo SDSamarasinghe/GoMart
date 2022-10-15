@@ -142,24 +142,22 @@ function App() {
           <Route path="/order/editorder1" element={<EditOrder1 />} />
 
           {/* Shipping */}
-          <Route path="/shipping/addshipping" element={<Addshipping />}></Route> 
+          <Route path="/shipping/addshipping" element={<Addshipping />}/>
           <Route path="/shipping/editshipping" element={<Editshipping />}/>
           <Route path="/shipping/viewdeleteshipping" element={< Viewdeleteshipping />}/>
-          {/* <Route path="/strore/StoreOrderEdit" element={< Vieweditshipping />}/> */}
+          
+
 
           {/* delivery */}
           <Route path="/delivery/adddelivery" element={<Adddelivery />}></Route>           
           <Route path="/delivery/editdelivery" element={<Editdelivery />}></Route> 
-          <Route path="/delivery/viewdeletedelivery" element={<Viewdeletedelivery />}></Route> /
+          <Route path="/delivery/viewdeletedelivery" element={<Viewdeletedelivery />}/>
 
           <Route path="/delivery/Adddel" element={<Adddelivery1 />}></Route>
-          <Route path="/delivery/Adddel" element={<ViewDelivery />}></Route>
-
-
+          <Route path="/delivery/viewdel" element={<ViewDelivery />}></Route>
           </Routes>
-        <Footer/>
-      </BrowserRouter>
-    </div>
+          </BrowserRouter>
+          </div>
   );
 }
 
