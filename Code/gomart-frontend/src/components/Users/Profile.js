@@ -4,8 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 
 
 const Profile = () => {
-  
-  return (
+
+return (
 
     <div class="container mt-5">
     <div class="row d-flex justify-content-center">
@@ -18,15 +18,15 @@ const Profile = () => {
                         <p class="fonts">Address Address Address Address Address Address Address Address Address Address Address Address Address </p>
                     </div>
                 
-                    <div class="buttons"> <button class="btn btn-outline-primary px-4">Message</button> 
-                    <button class="btn btn-primary px-4 ms-3">Contact</button> </div>
+                        <div class="buttons"> <button class="btn btn-outline-primary px-4">Message</button> 
+                        <button class="btn btn-primary px-4 ms-3">Contact</button> </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
     
-  );
+    );
 };
 
 export default Profile;

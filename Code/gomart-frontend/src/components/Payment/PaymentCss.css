@@ -1,0 +1,26 @@
+.add_btn{
+text-align: right;
+}
+
+.link {
+text-decoration: inherit;
+color: inherit;
+}
+
+.link:hover{
+color: #fff;
+}
+
+.totalPrice{
+width: 400px;
+text-align: center;
+border: none;
+background-color: transparent;
+resize: none;
+outline: none;
+}
+
+.lines{
+margin-left: 900px;
+width:400px
+}
