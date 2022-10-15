@@ -59,6 +59,13 @@ const Navigator = () => {
                               <a>Store Order Admin</a>
                             </Link>
                           </li>
+                          
+                          <li>
+                            <Link to="/Message/AdminMessagesView">
+                              <a>Messages, Feedbacks and Complaints Admin</a>
+                            </Link>
+                          </li>
+
 
                         </ul>
                       </li>
@@ -80,7 +87,7 @@ const Navigator = () => {
                     </a>
                   </li>
                   <li>
-                    <a href="contact.html">
+                    <a href="/Message/AddMessage">
                       <span>Contact</span>
                     </a>
                   </li>

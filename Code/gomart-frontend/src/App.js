@@ -41,7 +41,9 @@ import AdminComplaintView from "./components/Complaints/AdminComplaintView";
 import ComplaintView from "./components/Complaints/ComplaintView";
 import EditComplaint from "./components/Complaints/EditComplaint";
 import AdminEditComplaint from "./components/Complaints/AdminEditComplaint";
-
+import AddMessage from "./components/Message/AddMessage";
+import AdminMessagesView from "./components/Message/AdminMessagesView";
+import EditMessage from "./components/Message/EditMessage";
 
 import Login from "./components/Users/Login";
 import Register from "./components/Users/Register";
@@ -137,6 +139,11 @@ function App() {
         <Route path="/Complaints/EditComplaint/:id/:fname/:lname/:date/:email/:pro_qua_fb/:deli_dri_rate/:deli_tme_rate/:recommendation/:suggestions" element={<EditComplaint />} />
         <Route path="/Complaints/AdminEditComplaint/:id/:fname/:lname/:date/:email/:pro_qua_fb/:deli_dri_rate/:deli_tme_rate/:recommendation/:suggestions" element={<AdminEditComplaint />} />
         
+        {/*Message */}
+        <Route path="/Message/AddMessage" element={<AddMessage />} />
+        <Route path="/Message/AdminMessagesView" element={<AdminMessagesView />} />
+        <Route path="/Message/EditMessage/:id" element={<EditMessage />} />
+
           </Routes>
         <Footer/>
       </BrowserRouter>
