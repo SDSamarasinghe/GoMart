@@ -13,6 +13,7 @@ const {
   getOrders,
   deleteOrder,
   getPayments,
+  //StoreOrderEdit,
 } = require("../controllers/storeControllers");
 
 const router = express.Router();
@@ -27,6 +28,7 @@ router.post("/orders", createOrder);
 router.get("/orders", getOrders);
 router.get("/order/:id", getSingleOrder);
 router.delete("/orders/:oid", deleteOrder);
+//router.put("/orders/:id", StoreOrderEdit);
 
 router.post("/delivery", createDelivey);
 

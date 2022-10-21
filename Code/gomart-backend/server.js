@@ -55,6 +55,7 @@ app.use("/api/users", require("./routes/userManageRoutes"));
 app.use("/api/store", require("./routes/storeRoutes"));
 app.use("/api/message", require("./routes/MessageRoutes"));
 
+
 //customer routes
 app.use("api/customer", require("./routes/UserRoutes"));
 

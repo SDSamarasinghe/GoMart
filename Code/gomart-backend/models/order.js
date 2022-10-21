@@ -25,12 +25,11 @@ const orderSchema = new mongoose.Schema({
 
     ItemList:{
         type:String,
-        required:true
+    
     },
     
     Remarks:{
         type:Number,
-        required:true
     }
 
 });
