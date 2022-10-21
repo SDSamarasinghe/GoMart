@@ -10,13 +10,13 @@ const StoreAdminOrders = () => {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:8000/api/store/orders`).then((res) => {
+    axios.get(`http://localhost:8000/api/store/order`).then((res) => {
       setOrders(res.data.orders);
     });
   }, []);
 
   const refresh = () => {
-    axios.get(`http://localhost:8000/api/store/orders`).then((res) => {
+    axios.get(`http://localhost:8000/api/store/order`).then((res) => {
       setOrders(res.data.orders);
       
     });
@@ -162,13 +162,13 @@ const StoreAdminOrders = () => {
                   <td>$ {order.total}</td>
                   <td style={{ width: "300px" }}>{order.createdAt}</td>
                   <td>
-                                    {/* <Link to={{ 
+                                    <Link to={{ 
                                     pathname: "/shipping/editshipping/"+order._id, 
                                     param1: "Par1" 
                                     }}  className='btn btn-warning text-nowrap' >
                                         
                                         <i className='fas fa-edit '></i>&nbsp; Edit
-                                    </Link> */}
+                                    </Link>
                                 
                                     &nbsp;
                                     </td><td>

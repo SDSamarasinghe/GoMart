@@ -12,6 +12,10 @@ const StoreOrderForm = () => {
   const [user, setUser] = useState();
   const [valid, setValid] = useState([]);
   const navigate = useNavigate();
+  const [error, setError] = useState("");
+
+
+
 
   const [order, setOrder] = useState({
     firstName: "",
@@ -64,10 +68,12 @@ const StoreOrderForm = () => {
         });
       })
       .catch((error) => {
+        //var error = error.response.data.error
         swal({
           title:
             "Sorry, You haven't login to the application, Please login to continue",
           icon: "warning",
+          text: error,
           confirmButtonText: "OK",
           confirmButtonColor: "#12af39",
           className: "store-swal-button",
@@ -125,6 +131,8 @@ const StoreOrderForm = () => {
       setValid((prev) => [...prev, "zipError"]);
     }
 
+
+
     if (valid.length > 0) {
       return;
     } else {
@@ -151,9 +159,26 @@ const StoreOrderForm = () => {
       });
   };
 
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   setFormErrors(validate());
+  //   setIsSubmit(true);
+  //   sub();
+  // };
+
+  // const validate = () => {
+  //   /*form validations*/
+  //   const errors = {};
+  //   const ne = /^[0-9\b]+$/;
+  //   var re = /\S+@\S+\.\S+/;
+
+ 
+
+
+
   const demo = () => {
     setOrder({
-      firstName: "Kushan",
+      firstName: "Naween",
       lastName: "Rajapaksha",
       address1: "25/5 , Kandana Lane,",
       address2: "Batagama",
@@ -186,8 +211,12 @@ const StoreOrderForm = () => {
             <input
               type="text"
               class={`form-control ${
+
                 valid.includes("fNameError") && "is-invalid"
               }`}
+
+              // class = {`from-control ${Error.fNameError && "is-invalid"}`}
+
               value={order.firstName}
               name="firstName"
               onChange={onFormChange}
