@@ -53,6 +53,10 @@ import ReportGenPage from "./components/Products/ReportGenPage";
 import CartComponent from "./components/Payment/CartComponent";
 import StoreOrderFormCart from "./components/Store/StoreOrderFormCart";
 
+// new added
+import AdminEdit from "./components/Complaints/AdminEdit";
+import AdminEditM from "./components/Message/AdminEdit";
+
 
 function App() {
   return (
@@ -137,13 +141,17 @@ function App() {
         <Route path="/Complaints/AdminComplaintView" element={<AdminComplaintView />} />
         <Route path="/Complaints/ComplaintView" element={<ComplaintView />} />
         <Route path="/Complaints/EditComplaint/:id/:fname/:lname/:date/:email/:pro_qua_fb/:deli_dri_rate/:deli_tme_rate/:recommendation/:suggestions" element={<EditComplaint />} />
-        <Route path="/Complaints/AdminEditComplaint/:id/:fname/:lname/:date/:email/:pro_qua_fb/:deli_dri_rate/:deli_tme_rate/:recommendation/:suggestions" element={<AdminEditComplaint />} />
-        
+        {/* <Route path="/Complaints/AdminEditComplaint/:id/:fname/:lname/:date/:email/:pro_qua_fb/:deli_dri_rate/:deli_tme_rate/:recommendation/:suggestions" element={<AdminEditComplaint />} /> */}
+        <Route path="/Complaints/AdminEditComplaint/:id" element={<AdminEditComplaint />} />
+
         {/*Message */}
         <Route path="/Message/AddMessage" element={<AddMessage />} />
         <Route path="/Message/AdminMessagesView" element={<AdminMessagesView />} />
         <Route path="/Message/EditMessage/:id" element={<EditMessage />} />
 
+        {/* New added */}
+        <Route path="/Complaints/AdminEdit/:id" element={<AdminEdit/>} />
+        <Route path="/Message/AdminEdit/:id" element = {<AdminEditM />}></Route>
           </Routes>
         <Footer/>
       </BrowserRouter>

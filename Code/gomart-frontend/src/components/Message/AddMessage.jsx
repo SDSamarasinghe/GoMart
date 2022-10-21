@@ -77,7 +77,6 @@ const AddMessage  = () => {
               <input
                 type="text"
                 class={`form-control ${errors.nameError && "is-invalid"}`}
-                aria-describedby="emailHelp"
                 placeholder="First Name"
                 value={fname}
                 onChange={(e) => {
@@ -103,6 +102,7 @@ const AddMessage  = () => {
               <input
                 type="text"
                 className="form-control"
+                aria-describedby="emailHelp"
                 placeholder="abc@gmail.com"
                 value={email}
                 onChange={(e) => {

@@ -121,8 +121,9 @@ const AddComplaints  = () => {
             <div className="form-group my-4">
               <label className="my-1">Email</label>
               <input
-                type="text"
-                className="form-control"
+                type="email"
+                className="emailHelp"
+                aria-describedby="emailHelp"
                 placeholder="abc@gmail.com"
                 value={email}
                 onChange={(e) => {

@@ -14,7 +14,30 @@ const AdminMessagesView = () => {
     axios.get(`http://localhost:8000/api/message/all`).then((res) => {
       setMessages(res.data);
     });
-  }, []);
+
+   }, [])
+
+  // useEffect(() => {
+	// 	getMessageData(); //5
+		
+	// }, []);
+
+//   const getMessageData = async (searchFilter) => {
+//     const msgFilterModel = {
+//         searchFilter: searchFilter,
+//     };
+//     const response = await axios.post(
+//         `http://localhost:8000/api/message/all`,
+//         msgFilterModel,
+//         {
+//             headers: {
+//                 authentication: localStorage.getItem("authentication"),
+//             },
+//         },
+//     );
+//     console.log(response.data)
+//     setMessages(response.data);
+// };
 
   const deleteMessage = (id) => {
     swal({
@@ -53,7 +76,7 @@ const AdminMessagesView = () => {
       doc.setFontSize(28);
       doc.setTextColor(20, 30, 39);
       doc.setFontSize(16);
-      doc.text(5, 20, "Agrotec LLC - Reports");
+      doc.text(5, 20, "Go Mart - Reports");
       doc.setFontSize(12);
       doc.text(5, 30, "Generated Time :");
       //Date
@@ -121,6 +144,10 @@ const AdminMessagesView = () => {
     });
   };
 
+//   const onSearchTextChanged = (searchFilter) => {
+//     getMessageData(searchFilter);
+// }; //6
+
   return (
     <>
     <div className="store-add-product py-4 d-flex align-items-center flex-column justify-content-center">
@@ -133,6 +160,21 @@ const AdminMessagesView = () => {
         </div>
       </div>
     </div>
+
+    
+              {/* <input
+                className="form-control"
+                type="search"
+                placeholder="Search"
+                name="searchQuery"
+                onInput={(event) =>
+
+									onSearchTextChanged(
+										event.target.value,
+									)
+
+								}  //
+                //>*/}
 
       <div className="store-container d-flex justify-content-center p-5">
         <div className=" w-100" id="store-admin-admin456412123">
@@ -153,7 +195,7 @@ const AdminMessagesView = () => {
           >
             <thead className="store-admin-table-header">
               <tr>
-                {/* <th scope="col">No.</th> */}
+                <th scope="col">No.</th>
                 <th scope="col">First Name</th>
                 <th scope="col">Last Name</th>
                 <th scope="col">Email</th>
@@ -163,17 +205,17 @@ const AdminMessagesView = () => {
             </thead>
             <tbody>
               {message &&
-                message.map((msg) => (
+                message.map((msg , index) => (
                   <tr >
-                    {/* <th scope="row" style={{ width: "300px" }}>
+                    <th scope="row" style={{ width: "300px" }}>
                          {index + 1}                 
-                    </th> */}
+                    </th>
                     <td>{msg.fname}</td>
                     <td>{msg.lname}</td>
                     <td>{msg.email}</td>
                     <td>{msg.message}</td>
                     <td style={{ width: "300px" }}>
-                      <Link to={`/Message/EditMessage/${msg._id}`}>
+                      <Link to={`/Message/AdminEdit/${msg._id}`}>
                         <button
                           type="button"
                           class="btn btn-outline-warning mx-2"

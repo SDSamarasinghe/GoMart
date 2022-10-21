@@ -9,7 +9,6 @@ import { useRef } from "react";
 
 const AdminFeedbackView  = () => {
   const [Feedbacks, setFeedback] = useState([]);
-  
   useEffect(() => {
     axios.get(`http://localhost:8000/api/Feedbacks/all`).then((res) => {
       setFeedback(res.data);
@@ -53,7 +52,7 @@ const AdminFeedbackView  = () => {
       doc.setFontSize(28);
       doc.setTextColor(20, 30, 39);
       doc.setFontSize(16);
-      doc.text(5, 20, "Agrotec LLC - Reports");
+      doc.text(5, 20, "Gomart  - Reports");
       doc.setFontSize(12);
       doc.text(5, 30, "Generated Time :");
       //Date
@@ -116,10 +115,11 @@ const AdminFeedbackView  = () => {
 
       // we use a date string to generate our filename.
       const dateStr =
-        "Agrotec Reports" + date[0] + date[1] + date[2] + date[3] + date[4];
+        "Gomart Reports" + date[0] + date[1] + date[2] + date[3] + date[4];
       doc.save(`report_${dateStr}.pdf`);
     });
   };
+
 
   return (
     <>
