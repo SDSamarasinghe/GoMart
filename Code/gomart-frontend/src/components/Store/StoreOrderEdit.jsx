@@ -193,6 +193,7 @@ const StoreOrderEdit = () => {
               onChange={onFormChange}
             />
 
+
             <div class="invalid-feedback">Please enter a valid name.</div>
           </div>
           <div class="col-md-6">
